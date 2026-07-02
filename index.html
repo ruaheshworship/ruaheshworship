@@ -5,107 +5,255 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RüahEsh Worship</title>
 
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #0b0d10;
-      color: white;
+    :root{
+      --gold:#C8A24A;
+      --bg:#050607;
+      --soft:#0b0d10;
+      --text:rgba(255,255,255,0.85);
     }
 
-    .hero {
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-      background: radial-gradient(circle at center, #1a1d22 0%, #0b0d10 70%);
+    *{margin:0;padding:0;box-sizing:border-box}
+
+    body{
+      font-family:Inter, sans-serif;
+      background:var(--bg);
+      color:white;
     }
 
-    .hero-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.55);
+    /* NAV */
+    nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 40px;
+      position:fixed;
+      width:100%;
+      top:0;
+      background:rgba(0,0,0,0.6);
+      backdrop-filter:blur(10px);
+      z-index:10;
     }
 
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      max-width: 800px;
-      padding: 20px;
+    nav .logo{
+      color:var(--gold);
+      font-family:'Playfair Display';
+      letter-spacing:3px;
     }
 
-    .logo {
-      font-size: 48px;
-      letter-spacing: 6px;
-      font-weight: 300;
-      color: #C8A24A;
+    nav a{
+      color:white;
+      margin:0 12px;
+      text-decoration:none;
+      font-size:13px;
+      opacity:0.8;
     }
 
-    .subtitle {
-      margin-top: 15px;
-      font-size: 18px;
-      opacity: 0.85;
-      line-height: 1.6;
+    nav a:hover{color:var(--gold)}
+
+    .apply-btn-nav{
+      border:1px solid var(--gold);
+      padding:8px 14px;
+      color:var(--gold);
     }
 
-    .btn {
-      margin-top: 30px;
-      padding: 14px 30px;
-      font-size: 14px;
-      letter-spacing: 2px;
-      border: 1px solid #C8A24A;
-      color: #C8A24A;
-      background: transparent;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: inline-block;
+    /* HERO */
+    .hero{
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      background:radial-gradient(circle,#15181c,#050607);
+      padding-top:80px;
     }
 
-    .btn:hover {
-      background: #C8A24A;
-      color: #0b0d10;
+    .title{
+      font-size:60px;
+      color:var(--gold);
+      letter-spacing:10px;
+      font-family:'Playfair Display';
     }
 
-    .fade-in {
-      animation: fadeIn 2s ease-in-out;
+    .subtitle{
+      max-width:700px;
+      margin:20px auto;
+      color:var(--text);
+      line-height:1.8;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+    .btn{
+      margin-top:25px;
+      display:inline-block;
+      padding:14px 30px;
+      border:1px solid var(--gold);
+      color:var(--gold);
+      text-decoration:none;
     }
+
+    .btn:hover{
+      background:var(--gold);
+      color:black;
+    }
+
+    /* SECTION */
+    section{
+      padding:80px 10%;
+    }
+
+    h2{
+      color:var(--gold);
+      font-family:'Playfair Display';
+      margin-bottom:20px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:40px;
+      align-items:center;
+    }
+
+    .card{
+      background:var(--soft);
+      padding:30px;
+      border-left:2px solid var(--gold);
+    }
+
+    /* WHO WE SEEK */
+    .image-box{
+      height:250px;
+      background:#111;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:gray;
+    }
+
+    /* AUDITION STEPS */
+    ol li{
+      margin-bottom:12px;
+      color:var(--text);
+    }
+
+    /* FOOTER */
+    footer{
+      text-align:center;
+      padding:40px;
+      border-top:1px solid #222;
+      font-size:13px;
+      color:gray;
+    }
+
+    .social{
+      margin-top:10px;
+    }
+
+    .social a{
+      margin:0 10px;
+      color:var(--gold);
+      text-decoration:none;
+    }
+
   </style>
 </head>
 
 <body>
 
-  <section class="hero">
-    <div class="hero-overlay"></div>
+<!-- NAV -->
+<nav>
+  <div class="logo">RÜAHESH WORSHIP</div>
+  <div>
+    <a href="#">Inicio</a>
+    <a href="#">Quiénes Somos</a>
+    <a href="#">Audiciones</a>
+    <a href="#">Preguntas</a>
+    <a href="#">Contacto</a>
+    <a class="apply-btn-nav" href="https://forms.gle/YOUR_FORM_LINK">Aplica Ahora</a>
+  </div>
+</nav>
 
-    <div class="hero-content fade-in">
-
-      <div class="logo">
-        RÜAHESH WORSHIP
-      </div>
-
-      <div class="subtitle">
-        Un ministerio de adoración siendo formado para servir a la Iglesia con excelencia, unidad y reverencia.<br>
-        Donde los corazones se convierten en adoración.
-      </div>
-
-      <a href="https://forms.gle/CjbjBbpHaVCSDwcY8" target="_blank" class="btn">
-        APLICAR AHORA
-      </a>
-
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <div class="title">RÜAHESH WORSHIP</div>
+    <div class="subtitle">
+      Donde los corazones se convierten en adoración.
+      <br><br>
+      RüahEsh Worship es un grupo de alabanza y adoración que se está formando con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música y la adoración.
     </div>
-  </section>
+    <a class="btn" href="https://forms.gle/YOUR_FORM_LINK">APLICAR AHORA</a>
+    <p style="margin-top:15px;color:gray">Escanea el código QR para aplicar</p>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section>
+  <h2>¿QUÉ ES RÜAHESH WORSHIP?</h2>
+  <div class="card">
+    RüahEsh Worship es un grupo de alabanza y adoración que se está formando con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música y la adoración.
+  </div>
+</section>
+
+<!-- ABOUT / VISION -->
+<section class="grid">
+  <div>
+    <h2>QUIÉNES SOMOS</h2>
+    <p class="card">Visión: Ser un ministerio que impacte generaciones a través de la adoración.</p>
+    <p class="card">Misión: Crear un ambiente de adoración auténtico que glorifique a Dios.</p>
+    <p class="card">Valores: Excelencia, unidad, reverencia, pasión, integridad.</p>
+  </div>
+</section>
+
+<!-- WHO WE SEEK -->
+<section>
+  <h2>A QUIÉN BUSCAMOS</h2>
+  <div class="grid">
+    <div class="image-box">Micrófono (imagen)</div>
+    <div class="image-box">Guitarra eléctrica (sin rostro)</div>
+  </div>
+</section>
+
+<!-- COMMITMENT + PROCESS -->
+<section class="grid">
+  <div class="card">
+    <h2>NUESTRO COMPROMISO</h2>
+    Buscamos honrar a Dios en cada ensayo, servicio y presentación. Crecer en unidad y excelencia.
+  </div>
+
+  <div class="card">
+    <h2>PROCESO DE AUDICIÓN</h2>
+    <ol>
+      <li>Completa el formulario (QR o botón).</li>
+      <li>Revisión del equipo.</li>
+      <li>Audición presencial o virtual.</li>
+      <li>Bienvenida al equipo.</li>
+    </ol>
+  </div>
+</section>
+
+<!-- FINAL CALL -->
+<section style="text-align:center">
+  <h2>¿Sientes que Dios te está llamando a ser parte de este equipo?</h2>
+  <a class="btn" href="https://forms.gle/qVopNERqnGq8L78m8">APLICAR AHORA</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  RüahEsh Worship<br>
+  Exaltamos a Dios · Transformamos atmósferas · Llevamos Su presencia
+
+  <div class="social">
+    <a href="#">Instagram</a>
+    <a href="#">YouTube</a>
+    <a href="#">Email</a>
+  </div>
+
+  <br><br>
+  © 2026 RüahEsh Worship. Todos los derechos reservados.
+</footer>
 
 </body>
 </html>
