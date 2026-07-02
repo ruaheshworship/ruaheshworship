@@ -15,12 +15,17 @@
       --text:rgba(255,255,255,0.85);
     }
 
-    *{margin:0;padding:0;box-sizing:border-box}
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
       font-family:Inter, sans-serif;
       background:var(--bg);
       color:white;
+      overflow-x:hidden;
     }
 
     /* NAV */
@@ -28,52 +33,62 @@
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:20px 40px;
+      padding:18px 40px;
       position:fixed;
       width:100%;
       top:0;
-      background:rgba(0,0,0,0.6);
+      background:rgba(0,0,0,0.65);
       backdrop-filter:blur(10px);
-      z-index:10;
+      z-index:1000;
+      flex-wrap:wrap;
     }
 
     nav .logo{
       color:var(--gold);
       font-family:'Playfair Display';
       letter-spacing:3px;
+      font-size:14px;
+    }
+
+    nav div{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:12px;
     }
 
     nav a{
       color:white;
-      margin:0 12px;
       text-decoration:none;
-      font-size:13px;
+      font-size:12px;
       opacity:0.8;
     }
 
-    nav a:hover{color:var(--gold)}
+    nav a:hover{
+      color:var(--gold);
+    }
 
     .apply-btn-nav{
       border:1px solid var(--gold);
-      padding:8px 14px;
+      padding:6px 12px;
       color:var(--gold);
     }
 
     /* HERO */
     .hero{
-      height:100vh;
+      min-height:100vh;
       display:flex;
       align-items:center;
       justify-content:center;
       text-align:center;
+      padding:140px 20px 80px;
       background:radial-gradient(circle,#15181c,#050607);
-      padding-top:80px;
     }
 
     .title{
-      font-size:60px;
+      font-size:clamp(28px,6vw,60px);
       color:var(--gold);
-      letter-spacing:10px;
+      letter-spacing:6px;
       font-family:'Playfair Display';
     }
 
@@ -82,15 +97,18 @@
       margin:20px auto;
       color:var(--text);
       line-height:1.8;
+      font-size:14px;
+      padding:0 10px;
     }
 
     .btn{
       margin-top:25px;
       display:inline-block;
-      padding:14px 30px;
+      padding:14px 28px;
       border:1px solid var(--gold);
       color:var(--gold);
       text-decoration:none;
+      transition:0.3s;
     }
 
     .btn:hover{
@@ -98,52 +116,57 @@
       color:black;
     }
 
-    /* SECTION */
+    /* SECTIONS */
     section{
-      padding:80px 10%;
+      padding:70px 8%;
     }
 
     h2{
       color:var(--gold);
       font-family:'Playfair Display';
       margin-bottom:20px;
-    }
-
-    .grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      align-items:center;
+      font-size:20px;
     }
 
     .card{
       background:var(--soft);
-      padding:30px;
+      padding:25px;
       border-left:2px solid var(--gold);
+      margin-bottom:15px;
     }
 
-    /* WHO WE SEEK */
+    /* GRID RESPONSIVE */
+    .grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:30px;
+      align-items:center;
+    }
+
+    /* IMAGE PLACEHOLDERS */
     .image-box{
-      height:250px;
+      height:220px;
       background:#111;
       display:flex;
       align-items:center;
       justify-content:center;
       color:gray;
+      border:1px solid #222;
     }
 
-    /* AUDITION STEPS */
+    /* LIST */
     ol li{
-      margin-bottom:12px;
+      margin-bottom:10px;
       color:var(--text);
+      font-size:14px;
     }
 
     /* FOOTER */
     footer{
       text-align:center;
-      padding:40px;
+      padding:40px 20px;
       border-top:1px solid #222;
-      font-size:13px;
+      font-size:12px;
       color:gray;
     }
 
@@ -155,6 +178,60 @@
       margin:0 10px;
       color:var(--gold);
       text-decoration:none;
+      font-size:12px;
+    }
+
+    /* =========================
+       RESPONSIVE TABLET + MOBILE
+    ========================= */
+
+    @media (max-width:1024px){
+      nav{
+        padding:15px 20px;
+      }
+
+      section{
+        padding:60px 20px;
+      }
+
+      .title{
+        font-size:42px;
+      }
+    }
+
+    @media (max-width:768px){
+
+      nav div{
+        width:100%;
+        justify-content:center;
+        margin-top:10px;
+      }
+
+      .hero{
+        padding:160px 20px 80px;
+      }
+
+      .grid{
+        grid-template-columns:1fr;
+      }
+
+      .title{
+        font-size:32px;
+        letter-spacing:4px;
+      }
+
+      .image-box{
+        height:180px;
+      }
+
+      h2{
+        font-size:18px;
+        text-align:center;
+      }
+
+      .card{
+        padding:20px;
+      }
     }
 
   </style>
@@ -171,7 +248,7 @@
     <a href="#">Audiciones</a>
     <a href="#">Preguntas</a>
     <a href="#">Contacto</a>
-    <a class="apply-btn-nav" href="https://forms.gle/YOUR_FORM_LINK">Aplica Ahora</a>
+    <a class="apply-btn-nav" href="https://forms.gle/7npWYhNem3FdNDBb9">Aplica</a>
   </div>
 </nav>
 
@@ -179,13 +256,18 @@
 <div class="hero">
   <div>
     <div class="title">RÜAHESH WORSHIP</div>
+
     <div class="subtitle">
       Donde los corazones se convierten en adoración.
       <br><br>
-      RüahEsh Worship es un grupo de alabanza y adoración que se está formando con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música y la adoración.
+      RüahEsh Worship es un grupo de alabanza y adoración que se está formando para exaltar a Dios y llevar Su presencia a través de la música.
     </div>
+
     <a class="btn" href="https://forms.gle/YOUR_FORM_LINK">APLICAR AHORA</a>
-    <p style="margin-top:15px;color:gray">Escanea el código QR para aplicar</p>
+
+    <p style="margin-top:15px;color:gray;font-size:12px;">
+      Escanea el código QR para aplicar
+    </p>
   </div>
 </div>
 
@@ -193,17 +275,17 @@
 <section>
   <h2>¿QUÉ ES RÜAHESH WORSHIP?</h2>
   <div class="card">
-    RüahEsh Worship es un grupo de alabanza y adoración que se está formando con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música y la adoración.
+    RüahEsh Worship es un grupo de alabanza y adoración con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música.
   </div>
 </section>
 
-<!-- ABOUT / VISION -->
+<!-- VISION -->
 <section class="grid">
   <div>
     <h2>QUIÉNES SOMOS</h2>
-    <p class="card">Visión: Ser un ministerio que impacte generaciones a través de la adoración.</p>
-    <p class="card">Misión: Crear un ambiente de adoración auténtico que glorifique a Dios.</p>
-    <p class="card">Valores: Excelencia, unidad, reverencia, pasión, integridad.</p>
+    <div class="card">Visión: Impactar generaciones a través de la adoración.</div>
+    <div class="card">Misión: Crear un ambiente auténtico de adoración.</div>
+    <div class="card">Valores: Excelencia, unidad, reverencia, pasión.</div>
   </div>
 </section>
 
@@ -211,39 +293,39 @@
 <section>
   <h2>A QUIÉN BUSCAMOS</h2>
   <div class="grid">
-    <div class="image-box">Micrófono (imagen)</div>
-    <div class="image-box">Guitarra eléctrica (sin rostro)</div>
+    <div class="image-box">Micrófono</div>
+    <div class="image-box">Instrumentistas</div>
   </div>
 </section>
 
-<!-- COMMITMENT + PROCESS -->
+<!-- PROCESS -->
 <section class="grid">
   <div class="card">
     <h2>NUESTRO COMPROMISO</h2>
-    Buscamos honrar a Dios en cada ensayo, servicio y presentación. Crecer en unidad y excelencia.
+    Honrar a Dios en cada ensayo, servicio y presentación.
   </div>
 
   <div class="card">
-    <h2>PROCESO DE AUDICIÓN</h2>
+    <h2>PROCESO</h2>
     <ol>
-      <li>Completa el formulario (QR o botón).</li>
-      <li>Revisión del equipo.</li>
-      <li>Audición presencial o virtual.</li>
-      <li>Bienvenida al equipo.</li>
+      <li>Completa formulario</li>
+      <li>Revisión del equipo</li>
+      <li>Audición</li>
+      <li>Bienvenida</li>
     </ol>
   </div>
 </section>
 
-<!-- FINAL CALL -->
+<!-- FINAL -->
 <section style="text-align:center">
-  <h2>¿Sientes que Dios te está llamando a ser parte de este equipo?</h2>
-  <a class="btn" href="https://forms.gle/qVopNERqnGq8L78m8">APLICAR AHORA</a>
+  <h2>¿DIOS TE ESTÁ LLAMANDO?</h2>
+  <a class="btn" href="https://forms.gle/7npWYhNem3FdNDBb9">APLICAR AHORA</a>
 </section>
 
 <!-- FOOTER -->
 <footer>
   RüahEsh Worship<br>
-  Exaltamos a Dios · Transformamos atmósferas · Llevamos Su presencia
+  Exaltamos a Dios · Transformamos atmósferas
 
   <div class="social">
     <a href="#">Instagram</a>
@@ -252,7 +334,7 @@
   </div>
 
   <br><br>
-  © 2026 RüahEsh Worship. Todos los derechos reservados.
+  © 2026 RüahEsh Worship
 </footer>
 
 </body>
