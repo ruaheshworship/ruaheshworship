@@ -6,13 +6,13 @@
 
 <title>RüahEsh Worship</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
   --black:#0A0A0A;
-  --white:#FFFFFF;
   --gold:#C7A55B;
+  --white:#fff;
 }
 
 *{
@@ -23,92 +23,87 @@
 }
 
 body{
-  font-family:Montserrat, sans-serif;
   background:var(--black);
   color:var(--white);
+  font-family:Montserrat;
 }
 
-/* NAV */
+/* NAV FIXED (ESTILO MOCKUP REAL) */
 nav{
   position:fixed;
+  top:0;
   width:100%;
   display:flex;
   justify-content:space-between;
   padding:20px 60px;
-  background:rgba(10,10,10,0.6);
+  z-index:999;
+  background:rgba(0,0,0,0.35);
   backdrop-filter:blur(10px);
-  z-index:1000;
 }
 
 .logo{
-  font-family:"Cormorant Garamond";
   color:var(--gold);
+  font-family:"Cormorant Garamond";
   letter-spacing:3px;
 }
 
-/* HERO */
+/* HERO FULL WIDTH */
 .hero{
   height:100vh;
+  position:relative;
+  background:url('images/hero.jpg') center/cover no-repeat;
   display:flex;
+  align-items:center;
 }
 
-.hero-text{
-  width:42%;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
+.hero-overlay{
+  position:absolute;
+  inset:0;
+  background:rgba(0,0,0,0.55);
+}
+
+.hero-content{
+  position:relative;
   padding-left:8%;
+  max-width:600px;
 }
 
-.subtitle{
-  font-size:28px;
+.hero-content h1{
+  font-family:"Cormorant Garamond";
+  font-size:42px;
+  color:var(--gold);
+  font-weight:600;
+}
+
+.hero-content p{
+  margin-top:15px;
+  font-size:20px;
   font-weight:300;
-  line-height:1.5;
-}
-
-.subtitle-italic{
-  font-size:22px;
-  font-style:italic;
-  opacity:0.85;
-  margin-top:12px;
+  line-height:1.6;
 }
 
 .btn{
-  margin-top:30px;
-  padding:12px 26px;
+  display:inline-block;
+  margin-top:25px;
+  padding:12px 25px;
   border:1px solid var(--gold);
   color:var(--gold);
   text-decoration:none;
-  width:max-content;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:var(--gold);
-  color:#000;
-}
-
-.hero-img{
-  width:58%;
-  height:100vh;
-  background:url('images/hero.jpg') center/cover no-repeat;
-  filter:brightness(0.75);
 }
 
 /* SECTIONS */
 .section{
-  padding:120px 8%;
+  padding:100px 8%;
 }
 
 .title{
   text-align:center;
-  margin-bottom:60px;
+  margin-bottom:50px;
 }
 
 .title h2{
   font-family:"Cormorant Garamond";
   color:var(--gold);
-  letter-spacing:3px;
   font-size:34px;
 }
 
@@ -116,42 +111,34 @@ nav{
   width:70px;
   height:1px;
   background:var(--gold);
-  margin:14px auto;
+  margin:12px auto;
 }
 
 /* ABOUT */
 .about{
-  max-width:900px;
-  margin:0 auto;
+  max-width:800px;
+  margin:auto;
   text-align:center;
-  line-height:1.9;
-  font-weight:300;
+  line-height:1.8;
   opacity:0.9;
 }
 
-/* VMV LINE ICON STYLE */
+/* VMV */
 .vmv{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:40px;
+  gap:30px;
   text-align:center;
 }
 
 .card{
   border:1px solid rgba(199,165,91,0.25);
   padding:40px 20px;
-  transition:0.3s;
 }
 
-.card:hover{
-  border-color:var(--gold);
-  transform:translateY(-5px);
-}
-
-/* LINE ART ICON STYLE (NO EMOJIS) */
 .icon{
-  width:42px;
-  height:42px;
+  width:40px;
+  height:40px;
   margin:0 auto 15px;
   stroke:var(--gold);
   fill:none;
@@ -167,12 +154,11 @@ nav{
 
 .role{
   border:1px solid rgba(199,165,91,0.25);
-  text-align:center;
   overflow:hidden;
 }
 
 .role-img{
-  height:360px;
+  height:380px;
   background-size:cover;
   background-position:center;
 }
@@ -185,47 +171,10 @@ nav{
   background:url('images/musicos.jpg') center/cover;
 }
 
-/* CONVOCATORIA */
-.conv{
-  text-align:center;
-  max-width:850px;
-  margin:0 auto;
-}
-
-.conv p{
-  font-weight:300;
-  line-height:1.8;
-  margin-bottom:25px;
-}
-
-.btns{
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  flex-wrap:wrap;
-  margin-bottom:25px;
-}
-
-.btn-outline{
-  border:1px solid var(--gold);
-  padding:10px 18px;
-  color:var(--gold);
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:2px;
-}
-
-.btn-gold{
-  background:var(--gold);
-  padding:14px 28px;
-  color:#000;
-  text-decoration:none;
-}
-
 /* PROCESS */
 .process{
-  max-width:650px;
-  margin:0 auto;
+  max-width:700px;
+  margin:auto;
   text-align:center;
 }
 
@@ -233,15 +182,14 @@ nav{
   margin:25px 0;
 }
 
-.step-title{
-  font-family:"Cormorant Garamond";
+.step h3{
   color:var(--gold);
-  margin-top:10px;
+  font-family:"Cormorant Garamond";
 }
 
 /* CALL */
 .call{
-  height:75vh;
+  height:70vh;
   background:url('images/call.jpg') center/cover no-repeat;
   position:relative;
   display:flex;
@@ -252,7 +200,7 @@ nav{
 .overlay{
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.75);
+  background:rgba(0,0,0,0.7);
 }
 
 .call-content{
@@ -264,35 +212,31 @@ nav{
   font-family:"Cormorant Garamond";
   color:var(--gold);
   font-size:40px;
-  margin-bottom:25px;
 }
 
 .call-btn{
-  background:var(--gold);
+  display:inline-block;
+  margin-top:20px;
   padding:14px 30px;
-  text-decoration:none;
+  background:var(--gold);
   color:#000;
+  text-decoration:none;
 }
 
 /* FOOTER */
 footer{
-  padding:80px 8%;
+  padding:60px;
   text-align:center;
-  background:#080808;
-  font-size:14px;
-  opacity:0.85;
+  background:#070707;
+  font-size:13px;
+  opacity:0.8;
 }
 
 /* RESPONSIVE */
 @media(max-width:900px){
 
-.hero{
-  flex-direction:column;
-}
-
-.hero-text,.hero-img{
-  width:100%;
-  height:50vh;
+.hero-content h1{
+  font-size:30px;
 }
 
 .vmv{
@@ -301,10 +245,6 @@ footer{
 
 .roles{
   grid-template-columns:1fr;
-}
-
-.call-content h2{
-  font-size:26px;
 }
 
 }
@@ -320,16 +260,14 @@ footer{
 
 <!-- HERO -->
 <section class="hero">
+  <div class="hero-overlay"></div>
 
-  <div class="hero-text">
-    <p class="subtitle">Donde los corazones se convierten en adoración</p>
-    <p class="subtitle-italic">y Su presencia transforma todo lo que toca</p>
+  <div class="hero-content">
+    <h1>Donde los corazones se convierten en adoración</h1>
+    <p>y Su presencia transforma todo lo que toca</p>
 
-    <a class="btn" href="https://forms.gle/TU_FORM_AQUI">Aplica Ahora</a>
+    <a class="btn" href="#">APLICAR AHORA</a>
   </div>
-
-  <div class="hero-img"></div>
-
 </section>
 
 <!-- ABOUT -->
@@ -340,7 +278,7 @@ footer{
   </div>
 
   <div class="about">
-    RüahEsh Worship es un ministerio llamado a exaltar a Dios con excelencia, adoración auténtica y presencia.
+    RüahEsh Worship es un ministerio llamado a exaltar a Dios con excelencia y presencia.
   </div>
 </section>
 
@@ -362,14 +300,14 @@ footer{
 
     <div class="card">
       <svg class="icon" viewBox="0 0 24 24">
-        <path d="M12 21V3M5 8l7-5 7 5"/>
+        <path d="M12 3v18M5 9l7-6 7 6"/>
       </svg>
       <h3>MISIÓN</h3>
     </div>
 
     <div class="card">
       <svg class="icon" viewBox="0 0 24 24">
-        <path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-2 4 4 0 0 1 8 2c0 6.5-8 11-8 11z"/>
+        <path d="M12 21s-8-5-8-11a4 4 0 0 1 8-2 4 4 0 0 1 8 2c0 6-8 11-8 11z"/>
       </svg>
       <h3>VALORES</h3>
     </div>
@@ -388,58 +326,29 @@ footer{
 
     <div class="role">
       <div class="role-img vocal"></div>
-      <h3>VOCALISTAS</h3>
     </div>
 
     <div class="role">
       <div class="role-img music"></div>
-      <h3>MÚSICOS</h3>
     </div>
 
   </div>
-</section>
-
-<!-- CONVOCATORIA -->
-<section class="section">
-
-  <div class="conv">
-
-    <div class="title">
-      <h2>CONVOCATORIA</h2>
-      <div class="line"></div>
-    </div>
-
-    <p>Te recomendamos leer la convocatoria antes de aplicar.</p>
-
-    <div class="btns">
-      <a class="btn-outline" href="#">Leer PDF</a>
-      <a class="btn-outline" href="#" download>Descargar</a>
-    </div>
-
-    <a class="btn-gold" href="https://forms.gle/TU_FORM_AQUI">APLICAR AHORA</a>
-
-  </div>
-
 </section>
 
 <!-- PROCESS -->
 <section class="section">
-
   <div class="title">
     <h2>PROCESO DE AUDICIÓN</h2>
     <div class="line"></div>
   </div>
 
   <div class="process">
-
-    <div class="step"><div class="step-title">Aplicación</div></div>
-    <div class="step"><div class="step-title">Evaluación</div></div>
-    <div class="step"><div class="step-title">Audición</div></div>
-    <div class="step"><div class="step-title">Entrevista</div></div>
-    <div class="step"><div class="step-title">Decisión</div></div>
-
+    <div class="step"><h3>Aplicación</h3></div>
+    <div class="step"><h3>Evaluación</h3></div>
+    <div class="step"><h3>Audición</h3></div>
+    <div class="step"><h3>Entrevista</h3></div>
+    <div class="step"><h3>Decisión</h3></div>
   </div>
-
 </section>
 
 <!-- CALL -->
@@ -448,13 +357,13 @@ footer{
 
   <div class="call-content">
     <h2>¿Sientes que Dios te está llamando?</h2>
-    <a class="call-btn" href="https://forms.gle/TU_FORM_AQUI">APLICAR AHORA</a>
+    <a class="call-btn" href="#">APLICAR AHORA</a>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  © 2026 RüahEsh Worship — Exaltamos a Dios. Transformamos atmósferas.
+  © 2026 RüahEsh Worship
 </footer>
 
 </body>
