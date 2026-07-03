@@ -1,341 +1,91 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>RüahEsh Worship</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <style>
-    :root{
-      --gold:#C8A24A;
-      --bg:#050607;
-      --soft:#0b0d10;
-      --text:rgba(255,255,255,0.85);
-    }
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
-
-    body{
-      font-family:Inter, sans-serif;
-      background:var(--bg);
-      color:white;
-      overflow-x:hidden;
-    }
-
-    /* NAV */
-    nav{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:18px 40px;
-      position:fixed;
-      width:100%;
-      top:0;
-      background:rgba(0,0,0,0.65);
-      backdrop-filter:blur(10px);
-      z-index:1000;
-      flex-wrap:wrap;
-    }
-
-    nav .logo{
-      color:var(--gold);
-      font-family:'Playfair Display';
-      letter-spacing:3px;
-      font-size:14px;
-    }
-
-    nav div{
-      display:flex;
-      flex-wrap:wrap;
-      justify-content:center;
-      gap:12px;
-    }
-
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-size:12px;
-      opacity:0.8;
-    }
-
-    nav a:hover{
-      color:var(--gold);
-    }
-
-    .apply-btn-nav{
-      border:1px solid var(--gold);
-      padding:6px 12px;
-      color:var(--gold);
-    }
-
-    /* HERO */
-    .hero{
-      min-height:100vh;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      padding:140px 20px 80px;
-      background:radial-gradient(circle,#15181c,#050607);
-    }
-
-    .title{
-      font-size:clamp(28px,6vw,60px);
-      color:var(--gold);
-      letter-spacing:6px;
-      font-family:'Playfair Display';
-    }
-
-    .subtitle{
-      max-width:700px;
-      margin:20px auto;
-      color:var(--text);
-      line-height:1.8;
-      font-size:14px;
-      padding:0 10px;
-    }
-
-    .btn{
-      margin-top:25px;
-      display:inline-block;
-      padding:14px 28px;
-      border:1px solid var(--gold);
-      color:var(--gold);
-      text-decoration:none;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:var(--gold);
-      color:black;
-    }
-
-    /* SECTIONS */
-    section{
-      padding:70px 8%;
-    }
-
-    h2{
-      color:var(--gold);
-      font-family:'Playfair Display';
-      margin-bottom:20px;
-      font-size:20px;
-    }
-
-    .card{
-      background:var(--soft);
-      padding:25px;
-      border-left:2px solid var(--gold);
-      margin-bottom:15px;
-    }
-
-    /* GRID RESPONSIVE */
-    .grid{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:30px;
-      align-items:center;
-    }
-
-    /* IMAGE PLACEHOLDERS */
-    .image-box{
-      height:220px;
-      background:#111;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      color:gray;
-      border:1px solid #222;
-    }
-
-    /* LIST */
-    ol li{
-      margin-bottom:10px;
-      color:var(--text);
-      font-size:14px;
-    }
-
-    /* FOOTER */
-    footer{
-      text-align:center;
-      padding:40px 20px;
-      border-top:1px solid #222;
-      font-size:12px;
-      color:gray;
-    }
-
-    .social{
-      margin-top:10px;
-    }
-
-    .social a{
-      margin:0 10px;
-      color:var(--gold);
-      text-decoration:none;
-      font-size:12px;
-    }
-
-    /* =========================
-       RESPONSIVE TABLET + MOBILE
-    ========================= */
-
-    @media (max-width:1024px){
-      nav{
-        padding:15px 20px;
-      }
-
-      section{
-        padding:60px 20px;
-      }
-
-      .title{
-        font-size:42px;
-      }
-    }
-
-    @media (max-width:768px){
-
-      nav div{
-        width:100%;
-        justify-content:center;
-        margin-top:10px;
-      }
-
-      .hero{
-        padding:160px 20px 80px;
-      }
-
-      .grid{
-        grid-template-columns:1fr;
-      }
-
-      .title{
-        font-size:32px;
-        letter-spacing:4px;
-      }
-
-      .image-box{
-        height:180px;
-      }
-
-      h2{
-        font-size:18px;
-        text-align:center;
-      }
-
-      .card{
-        padding:20px;
-      }
-    }
-
-  </style>
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">RÜAHESH WORSHIP</div>
-  <div>
-    <a href="#">Inicio</a>
-    <a href="#">Quiénes Somos</a>
-    <a href="#">Audiciones</a>
-    <a href="#">Preguntas</a>
-    <a href="#">Contacto</a>
-    <a class="apply-btn-nav" href="https://forms.gle/7npWYhNem3FdNDBb9">Aplica</a>
+<!-- ================= HEADER ================= -->
+<header class="header">
+
+  <div class="logo">
+    <img src="images/logo.png" alt="RüahEsh Worship Logo">
+    <span class="logo-text">RÜAHESH WORSHIP</span>
   </div>
-</nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div>
-    <div class="title">RÜAHESH WORSHIP</div>
+  <nav class="nav">
+    <a href="#inicio">Inicio</a>
+    <a href="#quienes">Quiénes Somos</a>
+    <a href="#convocatoria">Convocatoria</a>
+    <a href="#audiciones">Audiciones</a>
+    <a href="#faq">Preguntas</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
 
-    <div class="subtitle">
-      Donde los corazones se convierten en adoración.
-      <br><br>
-      RüahEsh Worship es un grupo de alabanza y adoración que se está formando para exaltar a Dios y llevar Su presencia a través de la música.
+  <a class="apply-btn" href="https://YOUR-GOOGLE-FORM-LINK" target="_blank">
+    Aplica Ahora
+  </a>
+
+</header>
+
+
+<!-- ================= HERO ================= -->
+<section id="inicio" class="hero">
+
+  <!-- Background image/video layer -->
+  <div class="hero-bg"></div>
+
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- Hero content -->
+  <div class="hero-content">
+
+    <h1>
+      Donde los corazones<br>
+      <span>se convierten en adoración</span>
+    </h1>
+
+    <p>
+      RüahEsh Worship es un grupo de alabanza y adoración que se está formando
+      con el propósito de servir a Dios con excelencia, unidad y reverencia.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="https://YOUR-GOOGLE-FORM-LINK">
+        APLICAR AHORA
+      </a>
+
+      <a class="btn-secondary" href="#convocatoria">
+        LEER CONVOCATORIA
+      </a>
     </div>
 
-    <a class="btn" href="https://forms.gle/YOUR_FORM_LINK">APLICAR AHORA</a>
+    <!-- QR -->
+    <div class="qr-box">
+      <img src="images/qr.png" alt="QR">
+      <small>Escanea para aplicar</small>
+    </div>
 
-    <p style="margin-top:15px;color:gray;font-size:12px;">
-      Escanea el código QR para aplicar
-    </p>
   </div>
-</div>
 
-<!-- WHO WE ARE -->
-<section>
-  <h2>¿QUÉ ES RÜAHESH WORSHIP?</h2>
-  <div class="card">
-    RüahEsh Worship es un grupo de alabanza y adoración con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música.
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <i class="fa-solid fa-chevron-down"></i>
   </div>
+
 </section>
-
-<!-- VISION -->
-<section class="grid">
-  <div>
-    <h2>QUIÉNES SOMOS</h2>
-    <div class="card">Visión: Impactar generaciones a través de la adoración.</div>
-    <div class="card">Misión: Crear un ambiente auténtico de adoración.</div>
-    <div class="card">Valores: Excelencia, unidad, reverencia, pasión.</div>
-  </div>
-</section>
-
-<!-- WHO WE SEEK -->
-<section>
-  <h2>A QUIÉN BUSCAMOS</h2>
-  <div class="grid">
-    <div class="image-box">Micrófono</div>
-    <div class="image-box">Instrumentistas</div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="grid">
-  <div class="card">
-    <h2>NUESTRO COMPROMISO</h2>
-    Honrar a Dios en cada ensayo, servicio y presentación.
-  </div>
-
-  <div class="card">
-    <h2>PROCESO</h2>
-    <ol>
-      <li>Completa formulario</li>
-      <li>Revisión del equipo</li>
-      <li>Audición</li>
-      <li>Bienvenida</li>
-    </ol>
-  </div>
-</section>
-
-<!-- FINAL -->
-<section style="text-align:center">
-  <h2>¿DIOS TE ESTÁ LLAMANDO?</h2>
-  <a class="btn" href="https://forms.gle/7npWYhNem3FdNDBb9">APLICAR AHORA</a>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  RüahEsh Worship<br>
-  Exaltamos a Dios · Transformamos atmósferas
-
-  <div class="social">
-    <a href="#">Instagram</a>
-    <a href="#">YouTube</a>
-    <a href="#">Email</a>
-  </div>
-
-  <br><br>
-  © 2026 RüahEsh Worship
-</footer>
-
-</body>
-</html>
