@@ -129,7 +129,113 @@ nav ul li:hover{
   filter:contrast(1.1) brightness(0.8);
   position:relative;
 }
+.section{
+  padding:120px 8%;
+}
 
+.section-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.section-title h2{
+  font-family:"Cormorant Garamond";
+  font-size:40px;
+  letter-spacing:4px;
+  color:var(--gold);
+}
+
+.section-title .line{
+  width:80px;
+  height:1px;
+  background:var(--gold);
+  margin:20px auto 0;
+}
+
+/* ABOUT */
+.about-grid{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+}
+
+.about-text{
+  width:50%;
+  font-weight:300;
+  line-height:1.9;
+  opacity:0.9;
+}
+
+.about-text p{
+  margin-bottom:20px;
+}
+
+.about-image{
+  width:50%;
+  height:450px;
+  background:url('images/about.jpg') center/cover no-repeat;
+  filter:brightness(0.8) contrast(1.1);
+}
+
+/* VISION MISION VALORES */
+.alt{
+  background:#0D0D0D;
+}
+
+.vmv-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:40px;
+  text-align:center;
+}
+
+.vmv-card{
+  padding:40px 20px;
+  border:1px solid rgba(199,165,91,0.2);
+  transition:0.3s;
+}
+
+.vmv-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-5px);
+}
+
+.icon{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.vmv-card h3{
+  font-family:"Cormorant Garamond";
+  letter-spacing:3px;
+  margin-bottom:15px;
+  color:var(--gold);
+}
+
+.vmv-card p{
+  font-weight:300;
+  font-size:14px;
+  line-height:1.8;
+  opacity:0.85;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+
+  .about-grid{
+    flex-direction:column;
+  }
+
+  .about-text,
+  .about-image{
+    width:100%;
+  }
+
+  .vmv-grid{
+    grid-template-columns:1fr;
+  }
+}
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero{
