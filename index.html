@@ -6,7 +6,6 @@
 
 <title>RüahEsh Worship</title>
 
-<!-- Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
@@ -27,7 +26,6 @@ body{
   font-family:Montserrat, sans-serif;
   background:var(--black);
   color:var(--white);
-  overflow-x:hidden;
 }
 
 /* NAV */
@@ -39,383 +37,230 @@ nav{
   justify-content:space-between;
   align-items:center;
   padding:20px 60px;
-  z-index:1000;
   background:rgba(10,10,10,0.6);
-  backdrop-filter:blur(10px);
+  backdrop-filter:blur(12px);
+  z-index:1000;
 }
 
 .logo{
   font-family:"Cormorant Garamond";
-  font-size:22px;
+  color:var(--gold);
   letter-spacing:3px;
-  color:var(--gold);
-}
-
-nav ul{
-  display:flex;
-  gap:30px;
-  list-style:none;
-}
-
-nav ul li{
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:2px;
-  cursor:pointer;
-  color:var(--white);
-  transition:0.3s;
-}
-
-nav ul li:hover{
-  color:var(--gold);
 }
 
 /* HERO */
 .hero{
   height:100vh;
   display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding:0 8%;
-  padding-top:80px;
 }
 
 .hero-text{
-  width:45%;
+  width:42%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding-left:8%;
 }
 
-.hero-text h1{
-  font-family:"Cormorant Garamond";
-  font-size:70px;
-  letter-spacing:6px;
-  color:var(--gold);
-}
-
-.hero-text h2{
-  font-size:22px;
-  margin-top:-10px;
-  letter-spacing:3px;
-}
-
-.hero-text p{
-  margin-top:25px;
-  line-height:1.8;
+.subtitle{
+  font-size:28px;
   font-weight:300;
-  opacity:0.9;
+  line-height:1.5;
+}
+
+.subtitle-italic{
+  font-size:22px;
+  font-style:italic;
+  opacity:0.85;
+  margin-top:12px;
 }
 
 .btn{
-  margin-top:35px;
-  display:inline-block;
-  padding:12px 28px;
+  margin-top:30px;
+  padding:12px 26px;
   border:1px solid var(--gold);
   color:var(--gold);
-  text-transform:uppercase;
-  font-size:12px;
-  letter-spacing:2px;
-  cursor:pointer;
+  text-decoration:none;
+  width:max-content;
   transition:0.3s;
 }
 
 .btn:hover{
   background:var(--gold);
-  color:black;
+  color:#000;
 }
 
 .hero-img{
-  width:50%;
-  height:70vh;
+  width:58%;
+  height:100vh;
   background:url('images/hero.jpg') center/cover no-repeat;
-  filter:contrast(1.1) brightness(0.8);
-  position:relative;
+  filter:brightness(0.75) contrast(1.1);
 }
+
+/* SECTIONS */
 .section{
   padding:120px 8%;
 }
 
-.section-title{
+.title{
   text-align:center;
   margin-bottom:60px;
 }
 
-.section-title h2{
+.title h2{
   font-family:"Cormorant Garamond";
-  font-size:40px;
-  letter-spacing:4px;
   color:var(--gold);
+  letter-spacing:3px;
+  font-size:34px;
 }
 
-.section-title .line{
-  width:80px;
+.line{
+  width:70px;
   height:1px;
   background:var(--gold);
-  margin:20px auto 0;
+  margin:14px auto;
 }
 
 /* ABOUT */
-.about-grid{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:60px;
-}
-
-.about-text{
-  width:50%;
-  font-weight:300;
+.about{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
   line-height:1.9;
+  font-weight:300;
   opacity:0.9;
 }
 
-.about-text p{
-  margin-bottom:20px;
-}
-
-.about-image{
-  width:50%;
-  height:450px;
-  background:url('images/about.jpg') center/cover no-repeat;
-  filter:brightness(0.8) contrast(1.1);
-}
-
-/* VISION MISION VALORES */
-.alt{
-  background:#0D0D0D;
-}
-
-.vmv-grid{
+/* VMV */
+.vmv{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:40px;
   text-align:center;
 }
 
-.vmv-card{
+.card{
+  border:1px solid rgba(199,165,91,0.25);
   padding:40px 20px;
-  border:1px solid rgba(199,165,91,0.2);
   transition:0.3s;
 }
 
-.vmv-card:hover{
+.card:hover{
   border-color:var(--gold);
   transform:translateY(-5px);
 }
 
 .icon{
   font-size:28px;
-  margin-bottom:20px;
-}
-
-.vmv-card h3{
-  font-family:"Cormorant Garamond";
-  letter-spacing:3px;
-  margin-bottom:15px;
   color:var(--gold);
+  margin-bottom:12px;
 }
 
-.vmv-card p{
-  font-weight:300;
-  font-size:14px;
-  line-height:1.8;
-  opacity:0.85;
+.card h3{
+  font-family:"Cormorant Garamond";
+  color:var(--gold);
+  letter-spacing:2px;
 }
 
-/* RESPONSIVE */
-@media(max-width:900px){
-
-  .about-grid{
-    flex-direction:column;
-
-.roles-grid{
-  grid-template-columns:1fr;
-}
-
-.conv-buttons{
-  flex-direction:column;
-  }
-
-  .about-text,
-  .about-image{
-    width:100%;
-  }
-
-  .vmv-grid{
-    grid-template-columns:1fr;
-  }
-
-.footer-grid{
-  grid-template-columns:1fr;
-  text-align:center;
-}
-
-.call-content h2{
-  font-size:28px;
-}
-
-.process{
-  padding:0 10px;
-}
-  
-/* =======================
- A QUIÉN BUSCAMOS
-======================= */
-
-.roles-grid{
+/* ROLES */
+.roles{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:50px;
+  gap:40px;
 }
 
-.role-card{
+.role{
+  border:1px solid rgba(199,165,91,0.25);
   text-align:center;
-  border:1px solid rgba(199,165,91,0.2);
-  padding:30px;
-  transition:0.3s;
 }
 
-.role-card:hover{
-  border-color:var(--gold);
-  transform:translateY(-5px);
-}
-
-.role-image{
-  width:100%;
-  height:300px;
-  margin-bottom:20px;
+.role-img{
+  height:360px;
   background-size:cover;
   background-position:center;
-  filter:brightness(0.85) contrast(1.1);
 }
 
-.vocalistas{
-  background-image:url('images/vocalistas.jpg');
-}
+.vocal{background:url('images/vocalistas.jpg');}
+.music{background:url('images/musicos.jpg');}
 
-.musicos{
-  background-image:url('images/musicos.jpg');
-}
-
-.role-card h3{
+.role h3{
+  margin:20px 0;
   font-family:"Cormorant Garamond";
   color:var(--gold);
-  letter-spacing:3px;
-  margin-bottom:10px;
 }
 
-/* =======================
- CONVOCATORIA
-======================= */
-
-.convocatoria-box{
-  max-width:900px;
-  margin:0 auto;
+/* CONVOCATORIA */
+.conv{
   text-align:center;
+  max-width:850px;
+  margin:0 auto;
 }
 
-.conv-text{
+.conv p{
   font-weight:300;
-  line-height:1.9;
-  margin-bottom:30px;
-  opacity:0.9;
+  line-height:1.8;
+  margin-bottom:25px;
 }
 
-.conv-buttons{
+.btns{
   display:flex;
   justify-content:center;
   gap:20px;
-  margin-bottom:40px;
   flex-wrap:wrap;
+  margin-bottom:25px;
 }
 
 .btn-outline{
   border:1px solid var(--gold);
+  padding:10px 18px;
   color:var(--gold);
-  padding:12px 20px;
+  text-decoration:none;
   font-size:12px;
   letter-spacing:2px;
-  text-transform:uppercase;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-.btn-outline:hover{
-  background:var(--gold);
-  color:black;
-}
-
-.apply-btn{
-  margin-top:20px;
 }
 
 .btn-gold{
   background:var(--gold);
-  color:black;
-  padding:14px 30px;
-  font-size:12px;
-  letter-spacing:2px;
-  text-transform:uppercase;
+  padding:14px 28px;
+  color:#000;
   text-decoration:none;
-  display:inline-block;
-  transition:0.3s;
 }
 
-.btn-gold:hover{
-  opacity:0.85;
-}
-/* =======================
- PROCESO
-======================= */
-
+/* PROCESS */
 .process{
-  max-width:800px;
+  max-width:600px;
   margin:0 auto;
   text-align:center;
 }
 
-.process-step{
-  margin:30px 0;
+.step{
+  margin:25px 0;
 }
 
-.num{
-  font-size:14px;
+.step .icon{
+  font-size:24px;
+}
+
+.step h3{
   color:var(--gold);
-  letter-spacing:2px;
-  margin-bottom:10px;
-}
-
-.process-step h3{
   font-family:"Cormorant Garamond";
-  color:var(--gold);
-  margin-bottom:10px;
-}
-
-.process-step p{
-  font-weight:300;
-  opacity:0.85;
-  line-height:1.8;
 }
 
 .arrow{
   color:var(--gold);
-  font-size:20px;
-  margin:10px 0;
 }
 
-/* =======================
- CALL TO ACTION FINAL
-======================= */
-
+/* CALL */
 .call{
-  position:relative;
-  height:70vh;
+  height:75vh;
   background:url('images/call.jpg') center/cover no-repeat;
+  position:relative;
   display:flex;
   align-items:center;
   justify-content:center;
-  text-align:center;
 }
 
-.call-overlay{
+.overlay{
   position:absolute;
   inset:0;
   background:rgba(0,0,0,0.75);
@@ -423,378 +268,204 @@ nav ul li:hover{
 
 .call-content{
   position:relative;
-  z-index:2;
-  padding:20px;
+  text-align:center;
 }
 
 .call-content h2{
   font-family:"Cormorant Garamond";
-  font-size:40px;
   color:var(--gold);
-  line-height:1.3;
-  margin-bottom:30px;
+  font-size:40px;
+  margin-bottom:25px;
 }
 
 .call-btn{
-  display:inline-block;
-  padding:14px 30px;
   background:var(--gold);
-  color:black;
+  padding:14px 30px;
   text-decoration:none;
-  letter-spacing:2px;
-  font-size:12px;
-  transition:0.3s;
+  color:#000;
 }
 
-.call-btn:hover{
-  opacity:0.85;
-}
-
-/* =======================
- FOOTER
-======================= */
-
+/* FOOTER */
 footer{
   padding:80px 8%;
-  background:#080808;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-  margin-bottom:40px;
-}
-
-footer h3, footer h4{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  margin-bottom:15px;
-  letter-spacing:2px;
-}
-
-footer p{
-  font-weight:300;
-  opacity:0.85;
-  line-height:1.8;
-}
-
-.copy{
   text-align:center;
-  font-size:12px;
-  opacity:0.6;
-  border-top:1px solid rgba(255,255,255,0.1);
-  padding-top:20px;
+  background:#080808;
+  font-size:14px;
+  opacity:0.85;
 }
+
 /* RESPONSIVE */
 @media(max-width:900px){
-  .hero{
-    flex-direction:column;
-    text-align:center;
-  }
 
-  .hero-text, .hero-img{
-    width:100%;
-  }
+.hero{
+  flex-direction:column;
+}
 
-  .hero-text h1{
-    font-size:48px;
-  }
+.hero-text,.hero-img{
+  width:100%;
+  height:50vh;
+}
 
-  .hero-img{
-    height:50vh;
-    margin-top:30px;
-  }
+.vmv{
+  grid-template-columns:1fr;
+}
 
-  nav{
-    padding:15px 20px;
-  }
+.roles{
+  grid-template-columns:1fr;
+}
 
-  nav ul{
-    gap:15px;
-  }
+.call-content h2{
+  font-size:26px;
+}
+
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav>
   <div class="logo">RÜAHESH</div>
-  <ul>
-    <li onclick="scrollToSection('hero')">Inicio</li>
-    <li>Quiénes Somos</li>
-    <li>Audiciones</li>
-    <li>Convocatoria</li>
-  </ul>
 </nav>
 
 <!-- HERO -->
-<section class="hero" id="hero">
-
+<section class="hero">
   <div class="hero-text">
-    <h1>RÜAHESH</h1>
-    <h2>WORSHIP</h2>
-
-    <p>
-      Exaltamos a Dios.<br/>
-      Transformamos atmósferas.<br/>
-      Llevamos Su presencia.
-    </p>
-
-    <div class="btn" onclick="alert('Ir a formulario')">
-      Aplica Ahora
-    </div>
+    <p class="subtitle">Donde los corazones se convierten en adoración</p>
+    <p class="subtitle-italic">y Su presencia transforma todo lo que toca</p>
+    <a class="btn" href="https://forms.gle/TU_FORM_AQUI">Aplica Ahora</a>
   </div>
-
   <div class="hero-img"></div>
-
 </section>
-<!-- =======================
- QUIÉNES SOMOS
-======================= -->
-<section class="section" id="about">
 
-  <div class="section-title">
+<!-- ABOUT -->
+<section class="section">
+  <div class="title">
     <h2>QUIÉNES SOMOS</h2>
     <div class="line"></div>
   </div>
 
-  <div class="about-grid">
-
-    <div class="about-text">
-      <p>
-        RüahEsh Worship es un ministerio de adoración llamado a exaltar a Dios con excelencia, 
-        integridad y presencia.
-      </p>
-
-      <p>
-        No somos solo un grupo musical. Somos una familia de adoradores que entiende que la música 
-        es un vehículo para la gloria de Dios.
-      </p>
-    </div>
-
-    <div class="about-image"></div>
-
+  <div class="about">
+    RüahEsh Worship es un ministerio llamado a exaltar a Dios con excelencia, 
+    adoración auténtica y presencia.
   </div>
 </section>
 
-<!-- =======================
- VISION / MISION / VALORES
-======================= -->
-<section class="section alt">
+<!-- VMV -->
+<section class="section">
+  <div class="vmv">
 
-  <div class="vmv-grid">
-
-    <!-- VISION -->
-    <div class="vmv-card">
+    <div class="card">
       <div class="icon">👁</div>
       <h3>VISIÓN</h3>
-      <p>
-        Ver vidas transformadas a través de una adoración verdadera que refleja el corazón de Dios.
-      </p>
     </div>
 
-    <!-- MISION -->
-    <div class="vmv-card">
+    <div class="card">
       <div class="icon">✝</div>
       <h3>MISIÓN</h3>
-      <p>
-        Exaltar a Dios con excelencia y autenticidad, creando espacios donde Su presencia se manifieste.
-      </p>
     </div>
 
-    <!-- VALORES -->
-    <div class="vmv-card">
+    <div class="card">
       <div class="icon">❤</div>
       <h3>VALORES</h3>
-      <p>
-        Intimidad con Dios, unidad, excelencia, integridad, obediencia y reverencia a Dios en todo lo que hacemos.
-      </p>
-    </div>
-
-  </div>
-
-<!-- =======================
- A QUIÉN BUSCAMOS
-======================= -->
-<section class="section">
-
-  <div class="section-title">
-    <h2>A QUIÉN BUSCAMOS</h2>
-    <div class="line"></div>
-  </div>
-
-  <div class="roles-grid">
-
-    <!-- VOCALISTAS -->
-    <div class="role-card">
-      <div class="role-image vocalistas"></div>
-      <h3>VOCALISTAS</h3>
-      <p>Personas con llamado a la adoración, sensibilidad espiritual y excelencia vocal.</p>
-    </div>
-
-    <!-- MUSICOS -->
-    <div class="role-card">
-      <div class="role-image musicos"></div>
-      <h3>MÚSICOS</h3>
-      <p>Instrumentistas comprometidos con excelencia, disciplina y corazón de servicio.</p>
     </div>
 
   </div>
 </section>
 
-<!-- =======================
- CONVOCATORIA
-======================= -->
-<section class="section alt">
+<!-- ROLES -->
+<section class="section">
+  <div class="roles">
 
-  <div class="section-title">
-    <h2>CONVOCATORIA</h2>
-    <div class="line"></div>
-  </div>
-
-  <div class="convocatoria-box">
-
-    <p class="conv-text">
-      Te recomendamos leer la Convocatoria antes de aplicar.  
-      En ella encontrarás nuestra visión, expectativas, proceso y el compromiso ministerial.
-    </p>
-
-    <div class="conv-buttons">
-
-      <a href="convocatoria.pdf" target="_blank" class="btn-outline">
-        📄 Leer Convocatoria
-      </a>
-
-      <a href="convocatoria.pdf" download class="btn-outline">
-        ⬇ Descargar PDF
-      </a>
-
+    <div class="role">
+      <div class="role-img vocal"></div>
+      <h3>VOCALISTAS</h3>
     </div>
 
-    <div class="apply-btn">
-      <a href="https://forms.gle/Rt79ufbz3CHTciCe9" class="btn-gold">
-        APLICAR AHORA
-      </a>
+    <div class="role">
+      <div class="role-img music"></div>
+      <h3>MÚSICOS</h3>
     </div>
 
   </div>
+</section>
 
-<!-- =======================
- PROCESO DE AUDICIÓN
-======================= -->
+<!-- CONVOCATORIA -->
 <section class="section">
 
-  <div class="section-title">
-    <h2>PROCESO DE AUDICIÓN</h2>
-    <div class="line"></div>
+  <div class="conv">
+
+    <p>
+      Te recomendamos leer la convocatoria antes de aplicar.
+    </p>
+
+    <div class="btns">
+      <a class="btn-outline" href="#">Leer PDF</a>
+      <a class="btn-outline" href="#" download>Descargar</a>
+    </div>
+
+    <a class="btn-gold" href="https://forms.gle/TU_FORM_AQUI">APLICAR AHORA</a>
+
   </div>
+
+</section>
+
+<!-- PROCESS -->
+<section class="section">
 
   <div class="process">
 
-    <div class="process-step">
-      <div class="num">01</div>
+    <div class="step">
+      <div class="icon">📋</div>
       <h3>Aplicación</h3>
-      <p>Completa el formulario con tu información y material de presentación.</p>
     </div>
 
     <div class="arrow">↓</div>
 
-    <div class="process-step">
-      <div class="num">02</div>
+    <div class="step">
+      <div class="icon">👂</div>
       <h3>Evaluación</h3>
-      <p>Revisamos tu información y te contactamos.</p>
     </div>
 
     <div class="arrow">↓</div>
 
-    <div class="process-step">
-      <div class="num">03</div>
+    <div class="step">
+      <div class="icon">🎵</div>
       <h3>Audición</h3>
-      <p>Te invitamos a una audición presencial.</p>
     </div>
 
     <div class="arrow">↓</div>
 
-    <div class="process-step">
-      <div class="num">04</div>
+    <div class="step">
+      <div class="icon">👥</div>
       <h3>Entrevista</h3>
-      <p>Conversación para conocerte mejor.</p>
     </div>
 
     <div class="arrow">↓</div>
 
-    <div class="process-step">
-      <div class="num">05</div>
+    <div class="step">
+      <div class="icon">✔</div>
       <h3>Decisión</h3>
-      <p>Oramos y tomamos la decisión final sobre tu integración al ministerio.</p>
     </div>
 
   </div>
+
 </section>
 
-<!-- =======================
- LLAMADO FINAL
-======================= -->
+<!-- CALL -->
 <section class="call">
-
-  <div class="call-overlay"></div>
+  <div class="overlay"></div>
 
   <div class="call-content">
-
-    <h2>
-      ¿Sientes que Dios te está llamando<br/>
-      a ser parte de este equipo?
-    </h2>
-
-    <a href="https://forms.gle/Eg6zEdEWy8xFK75y9" class="call-btn">
-      APLICAR AHORA
-    </a>
-
+    <h2>¿Sientes que Dios te está llamando?</h2>
+    <a class="call-btn" href="https://forms.gle/TU_FORM_AQUI">APLICAR AHORA</a>
   </div>
-
 </section>
 
-<!-- =======================
- FOOTER
-======================= -->
+<!-- FOOTER -->
 <footer>
-
-  <div class="footer-grid">
-
-    <div>
-      <h3>RÜAHESH WORSHIP</h3>
-      <p>Exaltamos a Dios. Transformamos atmósferas. Llevamos Su presencia.</p>
-    </div>
-
-    <div>
-      <h4>CONTACTO</h4>
-      <p>ruaheshworship@gmail.com</p>
-      <p>Instagram</p>
-    </div>
-
-    <div>
-      <h4>SÍGUENOS</h4>
-      <p>YouTube</p>
-      <p>Instagram</p>
-    </div>
-
-  </div>
-
-  <div class="copy">
-    © 2026 RüahEsh Worship. Todos los derechos reservados.
-  </div>
-
+  © 2026 RüahEsh Worship — Exaltamos a Dios. Transformamos atmósferas.
 </footer>
-</section>
-</section>
-<script>
-function scrollToSection(id){
-  document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
-}
-</script>
 
 </body>
 </html>
