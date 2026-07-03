@@ -1,91 +1,206 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>RüahEsh Worship</title>
+<title>RüahEsh Worship</title>
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root{
+  --black:#0A0A0A;
+  --white:#FFFFFF;
+  --gold:#C7A55B;
+}
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  scroll-behavior:smooth;
+}
+
+body{
+  font-family:Montserrat, sans-serif;
+  background:var(--black);
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:fixed;
+  top:0;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:20px 60px;
+  z-index:1000;
+  background:rgba(10,10,10,0.6);
+  backdrop-filter:blur(10px);
+}
+
+.logo{
+  font-family:"Cormorant Garamond";
+  font-size:22px;
+  letter-spacing:3px;
+  color:var(--gold);
+}
+
+nav ul{
+  display:flex;
+  gap:30px;
+  list-style:none;
+}
+
+nav ul li{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  cursor:pointer;
+  color:var(--white);
+  transition:0.3s;
+}
+
+nav ul li:hover{
+  color:var(--gold);
+}
+
+/* HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding:0 8%;
+  padding-top:80px;
+}
+
+.hero-text{
+  width:45%;
+}
+
+.hero-text h1{
+  font-family:"Cormorant Garamond";
+  font-size:70px;
+  letter-spacing:6px;
+  color:var(--gold);
+}
+
+.hero-text h2{
+  font-size:22px;
+  margin-top:-10px;
+  letter-spacing:3px;
+}
+
+.hero-text p{
+  margin-top:25px;
+  line-height:1.8;
+  font-weight:300;
+  opacity:0.9;
+}
+
+.btn{
+  margin-top:35px;
+  display:inline-block;
+  padding:12px 28px;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:2px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:var(--gold);
+  color:black;
+}
+
+.hero-img{
+  width:50%;
+  height:70vh;
+  background:url('images/hero.jpg') center/cover no-repeat;
+  filter:contrast(1.1) brightness(0.8);
+  position:relative;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .hero{
+    flex-direction:column;
+    text-align:center;
+  }
+
+  .hero-text, .hero-img{
+    width:100%;
+  }
+
+  .hero-text h1{
+    font-size:48px;
+  }
+
+  .hero-img{
+    height:50vh;
+    margin-top:30px;
+  }
+
+  nav{
+    padding:15px 20px;
+  }
+
+  nav ul{
+    gap:15px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-<!-- ================= HEADER ================= -->
-<header class="header">
+<!-- NAV -->
+<nav>
+  <div class="logo">RÜAHESH</div>
+  <ul>
+    <li onclick="scrollToSection('hero')">Inicio</li>
+    <li>Quiénes Somos</li>
+    <li>Audiciones</li>
+    <li>Convocatoria</li>
+  </ul>
+</nav>
 
-  <div class="logo">
-    <img src="images/logo.png" alt="RüahEsh Worship Logo">
-    <span class="logo-text">RÜAHESH WORSHIP</span>
-  </div>
+<!-- HERO -->
+<section class="hero" id="hero">
 
-  <nav class="nav">
-    <a href="#inicio">Inicio</a>
-    <a href="#quienes">Quiénes Somos</a>
-    <a href="#convocatoria">Convocatoria</a>
-    <a href="#audiciones">Audiciones</a>
-    <a href="#faq">Preguntas</a>
-    <a href="#contacto">Contacto</a>
-  </nav>
-
-  <a class="apply-btn" href="https://forms.gle/8NFQMrYDvSD3m3oj8" target="_blank">
-    Aplica Ahora
-  </a>
-
-</header>
-
-
-<!-- ================= HERO ================= -->
-<section id="inicio" class="hero">
-
-  <!-- Background image/video layer -->
-  <div class="hero-bg"></div>
-
-  <!-- Dark overlay -->
-  <div class="overlay"></div>
-
-  <!-- Hero content -->
-  <div class="hero-content">
-
-    <h1>
-      Donde los corazones<br>
-      <span>se convierten en adoración</span>
-    </h1>
+  <div class="hero-text">
+    <h1>RÜAHESH</h1>
+    <h2>WORSHIP</h2>
 
     <p>
-      RüahEsh Worship nace con el deseo de levantar un ministerio de alabanza y adoración 
-      que glorifique a Jesucristo y lleve Su mensaje a las personas dentro y fuera de la Iglesia.
+      Exaltamos a Dios.<br/>
+      Transformamos atmósferas.<br/>
+      Llevamos Su presencia.
     </p>
 
-    <div class="hero-actions">
-      <a class="btn-primary" href="https://forms.gle/8NFQMrYDvSD3m3oj8">
-        APLICAR AHORA
-      </a>
-
-      <a class="btn-secondary" href="#convocatoria">
-        LEER CONVOCATORIA
-      </a>
+    <div class="btn" onclick="alert('Ir a formulario')">
+      Aplica Ahora
     </div>
-
-    <!-- QR -->
-    <div class="qr-box">
-      <img src="images/qr.png" alt="QR">
-      <small>Escanea para aplicar</small>
-    </div>
-
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="scroll-indicator">
-    <i class="fa-solid fa-chevron-down"></i>
-  </div>
+  <div class="hero-img"></div>
 
 </section>
+
+<script>
+function scrollToSection(id){
+  document.getElementById(id)?.scrollIntoView({behavior:"smooth"});
+}
+</script>
+
+</body>
+</html>
