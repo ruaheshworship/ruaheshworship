@@ -31,14 +31,12 @@ body{
 /* NAV */
 nav{
   position:fixed;
-  top:0;
   width:100%;
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:20px 60px;
   background:rgba(10,10,10,0.6);
-  backdrop-filter:blur(12px);
+  backdrop-filter:blur(10px);
   z-index:1000;
 }
 
@@ -94,7 +92,7 @@ nav{
   width:58%;
   height:100vh;
   background:url('images/hero.jpg') center/cover no-repeat;
-  filter:brightness(0.75) contrast(1.1);
+  filter:brightness(0.75);
 }
 
 /* SECTIONS */
@@ -131,7 +129,7 @@ nav{
   opacity:0.9;
 }
 
-/* VMV */
+/* VMV LINE ICON STYLE */
 .vmv{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -150,16 +148,14 @@ nav{
   transform:translateY(-5px);
 }
 
+/* LINE ART ICON STYLE (NO EMOJIS) */
 .icon{
-  font-size:28px;
-  color:var(--gold);
-  margin-bottom:12px;
-}
-
-.card h3{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  letter-spacing:2px;
+  width:42px;
+  height:42px;
+  margin:0 auto 15px;
+  stroke:var(--gold);
+  fill:none;
+  stroke-width:1.5;
 }
 
 /* ROLES */
@@ -172,6 +168,7 @@ nav{
 .role{
   border:1px solid rgba(199,165,91,0.25);
   text-align:center;
+  overflow:hidden;
 }
 
 .role-img{
@@ -180,13 +177,12 @@ nav{
   background-position:center;
 }
 
-.vocal{background:url('images/vocalistas.jpg');}
-.music{background:url('images/musicos.jpg');}
+.vocal{
+  background:url('images/vocalistas.jpg') center/cover;
+}
 
-.role h3{
-  margin:20px 0;
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
+.music{
+  background:url('images/musicos.jpg') center/cover;
 }
 
 /* CONVOCATORIA */
@@ -228,7 +224,7 @@ nav{
 
 /* PROCESS */
 .process{
-  max-width:600px;
+  max-width:650px;
   margin:0 auto;
   text-align:center;
 }
@@ -237,17 +233,10 @@ nav{
   margin:25px 0;
 }
 
-.step .icon{
-  font-size:24px;
-}
-
-.step h3{
-  color:var(--gold);
+.step-title{
   font-family:"Cormorant Garamond";
-}
-
-.arrow{
   color:var(--gold);
+  margin-top:10px;
 }
 
 /* CALL */
@@ -324,18 +313,23 @@ footer{
 
 <body>
 
+<!-- NAV -->
 <nav>
   <div class="logo">RÜAHESH</div>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
+
   <div class="hero-text">
     <p class="subtitle">Donde los corazones se convierten en adoración</p>
     <p class="subtitle-italic">y Su presencia transforma todo lo que toca</p>
+
     <a class="btn" href="https://forms.gle/TU_FORM_AQUI">Aplica Ahora</a>
   </div>
+
   <div class="hero-img"></div>
+
 </section>
 
 <!-- ABOUT -->
@@ -346,27 +340,37 @@ footer{
   </div>
 
   <div class="about">
-    RüahEsh Worship es un ministerio llamado a exaltar a Dios con excelencia, 
-    adoración auténtica y presencia.
+    RüahEsh Worship es un ministerio llamado a exaltar a Dios con excelencia, adoración auténtica y presencia.
   </div>
 </section>
 
 <!-- VMV -->
 <section class="section">
+  <div class="title">
+    <h2>VISIÓN · MISIÓN · VALORES</h2>
+    <div class="line"></div>
+  </div>
+
   <div class="vmv">
 
     <div class="card">
-      <div class="icon">👁</div>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 4c4 4 8 6 8 10a8 8 0 1 1-16 0c0-4 4-6 8-10z"/>
+      </svg>
       <h3>VISIÓN</h3>
     </div>
 
     <div class="card">
-      <div class="icon">✝</div>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 21V3M5 8l7-5 7 5"/>
+      </svg>
       <h3>MISIÓN</h3>
     </div>
 
     <div class="card">
-      <div class="icon">❤</div>
+      <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 21s-8-4.5-8-11a4 4 0 0 1 8-2 4 4 0 0 1 8 2c0 6.5-8 11-8 11z"/>
+      </svg>
       <h3>VALORES</h3>
     </div>
 
@@ -375,6 +379,11 @@ footer{
 
 <!-- ROLES -->
 <section class="section">
+  <div class="title">
+    <h2>A QUIÉN BUSCAMOS</h2>
+    <div class="line"></div>
+  </div>
+
   <div class="roles">
 
     <div class="role">
@@ -395,9 +404,12 @@ footer{
 
   <div class="conv">
 
-    <p>
-      Te recomendamos leer la convocatoria antes de aplicar.
-    </p>
+    <div class="title">
+      <h2>CONVOCATORIA</h2>
+      <div class="line"></div>
+    </div>
+
+    <p>Te recomendamos leer la convocatoria antes de aplicar.</p>
 
     <div class="btns">
       <a class="btn-outline" href="#">Leer PDF</a>
@@ -413,40 +425,18 @@ footer{
 <!-- PROCESS -->
 <section class="section">
 
+  <div class="title">
+    <h2>PROCESO DE AUDICIÓN</h2>
+    <div class="line"></div>
+  </div>
+
   <div class="process">
 
-    <div class="step">
-      <div class="icon">📋</div>
-      <h3>Aplicación</h3>
-    </div>
-
-    <div class="arrow">↓</div>
-
-    <div class="step">
-      <div class="icon">👂</div>
-      <h3>Evaluación</h3>
-    </div>
-
-    <div class="arrow">↓</div>
-
-    <div class="step">
-      <div class="icon">🎵</div>
-      <h3>Audición</h3>
-    </div>
-
-    <div class="arrow">↓</div>
-
-    <div class="step">
-      <div class="icon">👥</div>
-      <h3>Entrevista</h3>
-    </div>
-
-    <div class="arrow">↓</div>
-
-    <div class="step">
-      <div class="icon">✔</div>
-      <h3>Decisión</h3>
-    </div>
+    <div class="step"><div class="step-title">Aplicación</div></div>
+    <div class="step"><div class="step-title">Evaluación</div></div>
+    <div class="step"><div class="step-title">Audición</div></div>
+    <div class="step"><div class="step-title">Entrevista</div></div>
+    <div class="step"><div class="step-title">Decisión</div></div>
 
   </div>
 
