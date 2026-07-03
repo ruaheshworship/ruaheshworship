@@ -236,6 +236,113 @@ nav ul li:hover{
     grid-template-columns:1fr;
   }
 }
+  
+/* =======================
+ A QUIÉN BUSCAMOS
+======================= */
+
+.roles-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:50px;
+}
+
+.role-card{
+  text-align:center;
+  border:1px solid rgba(199,165,91,0.2);
+  padding:30px;
+  transition:0.3s;
+}
+
+.role-card:hover{
+  border-color:var(--gold);
+  transform:translateY(-5px);
+}
+
+.role-image{
+  width:100%;
+  height:300px;
+  margin-bottom:20px;
+  background-size:cover;
+  background-position:center;
+  filter:brightness(0.85) contrast(1.1);
+}
+
+.vocalistas{
+  background-image:url('images/vocalistas.jpg');
+}
+
+.musicos{
+  background-image:url('images/musicos.jpg');
+}
+
+.role-card h3{
+  font-family:"Cormorant Garamond";
+  color:var(--gold);
+  letter-spacing:3px;
+  margin-bottom:10px;
+}
+
+/* =======================
+ CONVOCATORIA
+======================= */
+
+.convocatoria-box{
+  max-width:900px;
+  margin:0 auto;
+  text-align:center;
+}
+
+.conv-text{
+  font-weight:300;
+  line-height:1.9;
+  margin-bottom:30px;
+  opacity:0.9;
+}
+
+.conv-buttons{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin-bottom:40px;
+  flex-wrap:wrap;
+}
+
+.btn-outline{
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:12px 20px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn-outline:hover{
+  background:var(--gold);
+  color:black;
+}
+
+.apply-btn{
+  margin-top:20px;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:black;
+  padding:14px 30px;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  text-decoration:none;
+  display:inline-block;
+  transition:0.3s;
+}
+
+.btn-gold:hover{
+  opacity:0.85;
+}
 /* RESPONSIVE */
 @media(max-width:900px){
   .hero{
@@ -366,6 +473,73 @@ nav ul li:hover{
 
   </div>
 
+<!-- =======================
+ A QUIÉN BUSCAMOS
+======================= -->
+<section class="section">
+
+  <div class="section-title">
+    <h2>A QUIÉN BUSCAMOS</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="roles-grid">
+
+    <!-- VOCALISTAS -->
+    <div class="role-card">
+      <div class="role-image vocalistas"></div>
+      <h3>VOCALISTAS</h3>
+      <p>Personas con llamado a la adoración, sensibilidad espiritual y excelencia vocal.</p>
+    </div>
+
+    <!-- MUSICOS -->
+    <div class="role-card">
+      <div class="role-image musicos"></div>
+      <h3>MÚSICOS</h3>
+      <p>Instrumentistas comprometidos con excelencia, disciplina y corazón de servicio.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- =======================
+ CONVOCATORIA
+======================= -->
+<section class="section alt">
+
+  <div class="section-title">
+    <h2>CONVOCATORIA</h2>
+    <div class="line"></div>
+  </div>
+
+  <div class="convocatoria-box">
+
+    <p class="conv-text">
+      Te recomendamos leer la Convocatoria antes de aplicar.  
+      En ella encontrarás nuestra visión, expectativas, proceso y el compromiso ministerial.
+    </p>
+
+    <div class="conv-buttons">
+
+      <a href="convocatoria.pdf" target="_blank" class="btn-outline">
+        📄 Leer Convocatoria
+      </a>
+
+      <a href="convocatoria.pdf" download class="btn-outline">
+        ⬇ Descargar PDF
+      </a>
+
+    </div>
+
+    <div class="apply-btn">
+      <a href="https://forms.gle/TU_FORM_AQUI" class="btn-gold">
+        APLICAR AHORA
+      </a>
+    </div>
+
+  </div>
+
+</section>
 </section>
 <script>
 function scrollToSection(id){
