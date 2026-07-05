@@ -1,498 +1,563 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>RüahEsh Worship</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-:root{
-  --black:#0A0A0A;
-  --gold:#C7A55B;
-  --white:#FFFFFF;
-}
+    <title>RüahEsh Worship | Audiciones</title>
 
-/* RESET */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  scroll-behavior:smooth;
-}
+    <meta name="description"
+        content="Únete a RüahEsh Worship. Estamos buscando adoradores con un corazón rendido a Cristo para formar parte de este ministerio.">
 
-body{
-  background:var(--black);
-  color:var(--white);
-  font-family:Montserrat;
-  line-height:1.6;
-}
+    <meta name="keywords"
+        content="RüahEsh Worship, Worship, Audiciones, Ministerio, Música Cristiana, Vocalistas, Músicos">
 
-/* NAV (MOCKUP FIXED PREMIUM) */
-nav{
-  position:fixed;
-  top:0;
-  width:100%;
-  padding:22px 70px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  z-index:999;
-  background:rgba(0,0,0,0.35);
-  backdrop-filter:blur(14px);
-}
+    <meta property="og:title" content="RüahEsh Worship">
+    <meta property="og:description"
+        content="Exaltamos a Dios. Transformamos atmósferas. Llevamos Su Presencia.">
 
-.logo{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  font-size:20px;
-  letter-spacing:4px;
-}
+    <meta property="og:image" content="images/social-preview.jpg">
 
-nav ul{
-  display:flex;
-  gap:28px;
-  list-style:none;
-}
+    <meta property="og:type" content="website">
 
-nav a{
-  text-decoration:none;
-  color:#fff;
-  font-size:12px;
-  letter-spacing:1.5px;
-  opacity:0.75;
-  transition:0.3s;
-}
+    <link rel="icon" href="images/favicon.png">
 
-nav a:hover{
-  color:var(--gold);
-  opacity:1;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-/* HERO (FULL CINEMATIC MOCKUP) */
-.hero{
-  height:100vh;
-  background:url('images/hero.jpg') center/cover no-repeat;
-  position:relative;
-  display:flex;
-  align-items:center;
-}
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-.hero-overlay{
-  position:absolute;
-  inset:0;
-  background:linear-gradient(
-    90deg,
-    rgba(0,0,0,0.75) 0%,
-    rgba(0,0,0,0.4) 60%,
-    rgba(0,0,0,0.2) 100%
-  );
-}
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.hero-content{
-  position:relative;
-  padding-left:8%;
-  max-width:680px;
-}
+    <link rel="stylesheet" href="css/style.css">
 
-.hero-content h1{
-  font-family:"Cormorant Garamond";
-  font-size:52px;
-  font-weight:500;
-  color:var(--gold);
-  line-height:1.1;
-  letter-spacing:0.5px;
-}
-
-.hero-content p{
-  margin-top:18px;
-  font-size:18px;
-  font-weight:300;
-  opacity:0.9;
-}
-
-.btn{
-  display:inline-block;
-  margin-top:28px;
-  padding:13px 28px;
-  border:1px solid var(--gold);
-  color:var(--gold);
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:2px;
-}
-
-/* SECTION BASE (MOCKUP SPACING FIX) */
-.section{
-  padding:110px 9%;
-}
-
-/* TITLES */
-.title{
-  text-align:center;
-  margin-bottom:60px;
-}
-
-.title h2{
-  font-family:"Cormorant Garamond";
-  font-size:36px;
-  color:var(--gold);
-  letter-spacing:2px;
-  font-weight:500;
-}
-
-.line{
-  width:80px;
-  height:1px;
-  background:var(--gold);
-  margin:14px auto;
-  opacity:0.7;
-}
-
-/* QUIÉNES SOMOS (MOCKUP PANEL STYLE) */
-.about-box{
-  border:1px solid rgba(199,165,91,0.25);
-  padding:50px 60px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.about-text{
-  text-align:center;
-  max-width:800px;
-  margin:auto;
-  opacity:0.85;
-  font-size:15px;
-}
-
-/* VMV GRID (MOCKUP STRUCTURE CLEAN) */
-.about-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:40px;
-  margin-top:45px;
-}
-
-.vmv-card{
-  text-align:center;
-  padding:10px 20px;
-}
-
-.icon{
-  width:38px;
-  height:38px;
-  margin:0 auto 14px;
-  stroke:var(--gold);
-  fill:none;
-  stroke-width:1.6;
-}
-
-.vmv-card h3{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  letter-spacing:1.5px;
-  font-size:18px;
-}
-
-/* ROLES (MOCKUP ALIGNMENT FIXED) */
-.roles-intro{
-  text-align:center;
-  max-width:850px;
-  margin:0 auto 45px;
-  opacity:0.85;
-  font-size:15px;
-}
-
-.roles{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:45px;
-}
-
-.role{
-  border:1px solid rgba(199,165,91,0.25);
-  padding:40px;
-}
-
-.role h3{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  font-size:22px;
-  margin-bottom:18px;
-}
-
-.role ul{
-  padding-left:18px;
-  opacity:0.85;
-  font-size:14px;
-  line-height:1.8;
-}
-
-/* PROCESS (TRUE HORIZONTAL MOCKUP TIMELINE) */
-.process{
-  display:flex;
-  justify-content:space-between;
-  gap:20px;
-  max-width:1100px;
-  margin:auto;
-}
-
-.process-step{
-  flex:1;
-  text-align:center;
-  position:relative;
-}
-
-.process-step h3{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  font-size:18px;
-}
-
-/* connectors */
-.process-step::after{
-  content:"";
-  position:absolute;
-  top:18px;
-  right:-10px;
-  width:20px;
-  height:1px;
-  background:rgba(199,165,91,0.5);
-}
-
-.process-step:last-child::after{
-  display:none;
-}
-
-/* CALL CTA (MOCKUP BALANCED BOX) */
-.call-box{
-  border:1px solid var(--gold);
-  padding:45px 60px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  max-width:1100px;
-  margin:auto;
-}
-
-.call-box h2{
-  font-family:"Cormorant Garamond";
-  color:var(--gold);
-  font-size:26px;
-  font-weight:500;
-}
-
-.call-btn{
-  background:var(--gold);
-  color:#000;
-  padding:14px 28px;
-  text-decoration:none;
-  font-size:12px;
-  letter-spacing:2px;
-}
-
-/* FAQ */
-.faq{
-  max-width:850px;
-  margin:auto;
-}
-
-.faq-item{
-  padding:18px 0;
-  border-bottom:1px solid rgba(255,255,255,0.08);
-  font-size:14px;
-  opacity:0.85;
-}
-
-/* FOOTER */
-footer{
-  padding:70px;
-  text-align:center;
-  background:#070707;
-  font-size:13px;
-  opacity:0.75;
-}
-
-/* RESPONSIVE */
-@media(max-width:900px){
-
-.hero-content h1{
-  font-size:34px;
-}
-
-.about-grid,
-.roles,
-.process{
-  grid-template-columns:1fr;
-  flex-direction:column;
-}
-
-.call-box{
-  flex-direction:column;
-  gap:20px;
-  text-align:center;
-}
-
-nav ul{
-  display:none;
-}
-
-}
-</style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="logo">RÜAHESH</div>
-  <ul>
-    <li><a href="#about">QUIÉNES SOMOS</a></li>
-    <li><a href="#roles">BUSCAMOS</a></li>
-    <li><a href="#process">PROCESO</a></li>
-    <li><a href="#faq">FAQ</a></li>
-  </ul>
-</nav>
+    <!-- ===================================== -->
+    <!-- NAVBAR -->
+    <!-- ===================================== -->
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-overlay"></div>
+    <header class="header">
 
-  <div class="hero-content">
-    <h1>Donde los corazones se convierten en adoración</h1>
-    <p>y Su presencia transforma todo lo que toca</p>
-    <a class="btn" href="#">APLICAR AHORA</a>
-  </div>
-</section>
+        <div class="container">
 
-<!-- QUIÉNES SOMOS -->
-<section class="section" id="about">
+            <a href="#hero" class="logo">
 
-  <div class="title">
-    <h2>QUIÉNES SOMOS</h2>
-    <div class="line"></div>
-  </div>
+                <img src="images/logo-white.png" alt="RüahEsh Worship Logo">
 
-  <div class="about-box">
+            </a>
 
-    <div class="about-text">
-      RüahEsh Worship es un ministerio llamado a exaltar a Dios con excelencia, adoración auténtica y presencia.
-    </div>
+            <nav class="navbar">
 
-    <div class="about-grid">
+                <ul>
 
-      <div class="vmv-card">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M12 4c4 4 8 6 8 10a8 8 0 1 1-16 0c0-4 4-6 8-10z"/></svg>
-        <h3>VISIÓN</h3>
-      </div>
+                    <li><a href="#about">Quiénes Somos</a></li>
 
-      <div class="vmv-card">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M12 3v18"/></svg>
-        <h3>MISIÓN</h3>
-      </div>
+                    <li><a href="#vision">Visión</a></li>
 
-      <div class="vmv-card">
-        <svg class="icon" viewBox="0 0 24 24"><path d="M12 21s-8-5-8-11"/></svg>
-        <h3>VALORES</h3>
-      </div>
+                    <li><a href="#calling">Convocatoria</a></li>
 
-    </div>
+                    <li><a href="#process">Audición</a></li>
 
-  </div>
+                    <li><a href="#faq">Preguntas</a></li>
 
-</section>
+                </ul>
 
-<!-- ROLES -->
-<section class="section" id="roles">
+            </nav>
 
-  <div class="title">
-    <h2>A QUIÉN BUSCAMOS</h2>
-    <div class="line"></div>
-  </div>
+            <a href="https://forms.gle/XXXXXXXXXXXX"
+                target="_blank"
+                class="nav-button">
 
-  <p class="roles-intro">
-    Por ahora estamos buscando personas con pasión por Dios y la adoración en las siguientes áreas:
-  </p>
+                Aplica Ahora
 
-  <div class="roles">
+            </a>
 
-    <div class="role">
-      <h3>VOCALISTAS</h3>
-      <ul>
-        <li>Corazón de adoración</li>
-        <li>Sensibilidad espiritual</li>
-        <li>Excelencia vocal</li>
-      </ul>
-    </div>
+            <button class="menu-toggle" id="menuToggle">
 
-    <div class="role">
-      <h3>MÚSICOS</h3>
-      <ul>
-        <li>Disciplina musical</li>
-        <li>Espíritu de servicio</li>
-        <li>Excelencia instrumental</li>
-      </ul>
-    </div>
+                <span></span>
+                <span></span>
+                <span></span>
 
-  </div>
+            </button>
 
-</section>
+        </div>
 
-<!-- PROCESS -->
-<section class="section" id="process">
+    </header>
 
-  <div class="title">
-    <h2>PROCESO DE AUDICIÓN</h2>
-    <div class="line"></div>
-  </div>
+    <!-- ===================================== -->
+    <!-- HERO -->
+    <!-- ===================================== -->
 
-  <div class="process">
+    <section class="hero" id="hero">
 
-    <div class="process-step"><h3>Aplicación</h3></div>
-    <div class="process-step"><h3>Evaluación</h3></div>
-    <div class="process-step"><h3>Audición</h3></div>
-    <div class="process-step"><h3>Entrevista</h3></div>
-    <div class="process-step"><h3>Decisión</h3></div>
+        <div class="hero-overlay"></div>
 
-  </div>
+        <img
+            src="images/hero.jpg"
+            alt="RüahEsh Worship"
+            class="hero-image">
 
-</section>
+        <div class="hero-content">
 
-<!-- CALL -->
-<section class="section">
+            <img
+                src="images/logo-white.png"
+                alt="Logo"
+                class="hero-logo">
 
-  <div class="call-box">
+            <h1>
 
-    <h2>¿Sientes que Dios te está llamando a este equipo?</h2>
+                Exaltamos a Dios<br>
+                Transformamos atmósferas<br>
+                Llevamos Su Presencia
 
-    <a class="call-btn" href="#">APLICAR AHORA</a>
+            </h1>
 
-  </div>
+            <p>
 
-</section>
+                Estamos buscando adoradores apasionados que deseen servir con excelencia,
+                humildad y un corazón completamente rendido a Cristo.
 
-<!-- FAQ -->
-<section class="section" id="faq">
+            </p>
 
-  <div class="title">
-    <h2>PREGUNTAS FRECUENTES</h2>
-    <div class="line"></div>
-  </div>
+            <div class="hero-buttons">
 
-  <div class="faq">
-    <div class="faq-item">¿Necesito experiencia previa?</div>
-    <div class="faq-item">¿Dónde son las audiciones?</div>
-    <div class="faq-item">¿Hay límite de edad?</div>
-  </div>
+                <a href="#calling" class="btn-primary">
 
-</section>
+                    Aplica Ahora
 
-<!-- FOOTER -->
-<footer>
-  © 2026 RüahEsh Worship — Exaltamos a Dios
-</footer>
+                </a>
+
+                <a href="#about" class="btn-secondary">
+
+                    Conócenos
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- QUIÉNES SOMOS -->
+    <!-- ===================================== -->
+
+    <section class="about section" id="about">
+
+        <div class="container">
+
+            <h2>Quiénes Somos</h2>
+
+            <p>
+
+                RüahEsh Worship es un ministerio de adoración comprometido con exaltar el
+                nombre de Jesucristo a través de una vida de rendición, excelencia y servicio.
+                Creemos que la verdadera adoración trasciende la música y comienza con un
+                corazón completamente entregado al Señor.
+
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- VISIÓN MISIÓN VALORES -->
+    <!-- ===================================== -->
+
+    <section class="vision section" id="vision">
+
+        <div class="container grid-three">
+
+            <article class="card">
+
+                <div class="card-icon">
+
+                    <img src="icons/target.svg" alt="Visión">
+
+                </div>
+
+                <h3>Visión</h3>
+
+                <p>
+
+                    Formar una comunidad de adoradores que reflejen el carácter de Cristo y
+                    lleven Su presencia dondequiera que ministren.
+
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <div class="card-icon">
+
+                    <img src="icons/flame.svg" alt="Misión">
+
+                </div>
+
+                <h3>Misión</h3>
+
+                <p>
+
+                    Exaltar a Dios mediante una adoración bíblica, íntegra y llena del Espíritu
+                    Santo que transforme vidas.
+
+                </p>
+
+            </article>
+
+            <article class="card">
+
+                <div class="card-icon">
+
+                    <img src="icons/heart.svg" alt="Valores">
+
+                </div>
+
+                <h3>Valores</h3>
+
+                <p>
+
+                    Humildad, excelencia, integridad, unidad, discipulado y una búsqueda
+                    constante de la presencia de Dios.
+
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- A QUIÉN BUSCAMOS -->
+    <!-- ===================================== -->
+
+    <section class="calling section">
+
+        <div class="container">
+
+            <h2>A Quién Buscamos</h2>
+
+            <div class="grid-two">
+
+                <article class="card">
+
+                    <img src="icons/microphone.svg" alt="Vocalistas">
+
+                    <h3>Vocalistas</h3>
+
+                    <p>
+
+                        Personas con llamado al ministerio, afinación, deseo de crecer y un
+                        corazón dispuesto a servir.
+
+                    </p>
+
+                </article>
+
+                <article class="card">
+
+                    <img src="icons/music.svg" alt="Músicos">
+
+                    <h3>Músicos</h3>
+
+                    <p>
+
+                        Pianistas, guitarristas, bajistas, bateristas y otros instrumentistas
+                        comprometidos con la excelencia y la adoración.
+
+                    </p>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- CONVOCATORIA -->
+    <!-- ===================================== -->
+
+    <section class="section dark-section" id="calling">
+
+        <div class="container">
+
+            <h2>Convocatoria</h2>
+
+            <p>
+
+                Antes de aplicar, te invitamos a leer cuidadosamente toda la información
+                relacionada con el ministerio y el proceso de audición.
+
+            </p>
+
+            <div class="button-group">
+
+                <a href="documents/Convocatoria.pdf"
+                    target="_blank"
+                    class="btn-primary">
+
+                    Ver PDF
+
+                </a>
+
+                <a href="documents/Convocatoria.pdf"
+                    download
+                    class="btn-secondary">
+
+                    Descargar PDF
+
+                </a>
+
+                <a href="https://forms.gle/XXXXXXXXXXXX"
+                    target="_blank"
+                    class="btn-primary">
+
+                    Aplicar Ahora
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- PROCESO -->
+    <!-- ===================================== -->
+
+    <section class="section" id="process">
+
+        <div class="container">
+
+            <h2>Proceso de Audición</h2>
+
+            <div class="timeline">
+
+                <div class="timeline-item">
+
+                    <h3>1</h3>
+
+                    <p>
+
+                        Completa la solicitud.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <h3>2</h3>
+
+                    <p>
+
+                        Evaluaremos tu información.
+
+                    </p>
+
+                </div>
+
+                <div class="timeline-item">
+
+                    <h3>3</h3>
+
+                    <p>
+
+                        Si eres seleccionado serás contactado para la audición presencial.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- LLAMADO FINAL -->
+    <!-- ===================================== -->
+
+    <section class="final-call section">
+
+        <div class="container">
+
+            <h2>
+
+                ¿Sientes que Dios te está llamando a formar parte de este ministerio?
+
+            </h2>
+
+            <p>
+
+                Nos encantaría conocerte y caminar juntos mientras buscamos glorificar a
+                Cristo con nuestras vidas y nuestros dones.
+
+            </p>
+
+            <a
+                href="https://forms.gle/XXXXXXXXXXXX"
+                target="_blank"
+                class="btn-primary">
+
+                Aplica Ahora
+
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- FAQ -->
+    <!-- ===================================== -->
+
+    <section class="section" id="faq">
+
+        <div class="container">
+
+            <h2>Preguntas Frecuentes</h2>
+
+            <div class="faq">
+
+                <details>
+
+                    <summary>¿Necesito experiencia?</summary>
+
+                    <p>
+
+                        Sí. Buscamos personas con un nivel musical que les permita servir con
+                        excelencia y seguir creciendo dentro del ministerio.
+
+                    </p>
+
+                </details>
+
+                <details>
+
+                    <summary>¿Debo pertenecer a una iglesia?</summary>
+
+                    <p>
+
+                        Sí. Valoramos profundamente que cada integrante permanezca
+                        conectado y sometido a una iglesia local.
+
+                    </p>
+
+                </details>
+
+                <details>
+
+                    <summary>¿Puedo aplicar desde otro estado?</summary>
+
+                    <p>
+
+                        Sí, aunque la disponibilidad para reuniones y actividades será un
+                        factor importante durante el proceso.
+
+                    </p>
+
+                </details>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- ===================================== -->
+    <!-- FOOTER -->
+    <!-- ===================================== -->
+
+    <footer>
+
+        <div class="container footer-grid">
+
+            <div>
+
+                <img
+                    src="images/logo-white.png"
+                    class="footer-logo"
+                    alt="Logo">
+
+                <p>
+
+                    Exaltamos a Dios<br>
+                    Transformamos atmósferas<br>
+                    Llevamos Su Presencia
+
+                </p>
+
+            </div>
+
+            <div>
+
+                <h4>Contáctanos</h4>
+
+                <a href="mailto:ruaheshworship@gmail.com">
+
+                    ruaheshworship@gmail.com
+
+                </a>
+
+                <a href="https://www.instagram.com/ruaheshworship">
+
+                    Instagram
+
+                </a>
+
+                <a href="https://www.ruaheshworship.com">
+
+                    Website
+
+                </a>
+
+            </div>
+
+            <div>
+
+                <h4>Síguenos</h4>
+
+                <a href="https://www.instagram.com/ruaheshworship">
+
+                    Instagram
+
+                </a>
+
+                <a href="https://youtube.com/@ruaheshworship">
+
+                    YouTube
+
+                </a>
+
+            </div>
+
+        </div>
+
+        <div class="copyright">
+
+            © 2026 RüahEsh Worship. Todos los derechos reservados.
+
+        </div>
+
+    </footer>
+
+    <script src="js/script.js"></script>
 
 </body>
+
 </html>
