@@ -1,563 +1,803 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RüahEsh Worship</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#0a0908;
+    --black-2:#111009;
+    --gold:#c99a4c;
+    --gold-light:#e0be86;
+    --cream:#f2ead9;
+    --gray:#b9b3a6;
+    --line: rgba(201,154,76,0.35);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--black);
+    color:var(--cream);
+    font-family:'Jost', sans-serif;
+    font-weight:300;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.logo,.script{
+    font-family:'Cormorant Garamond', serif;
+  }
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;}
+  img{display:block;max-width:100%;}
+  .container{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 40px;
+  }
+  .eyebrow{
+    font-size:13px;
+    letter-spacing:4px;
+    color:var(--gold);
+    text-transform:uppercase;
+    font-weight:500;
+  }
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  /* ===== HEADER ===== */
+  header{
+    position:sticky;
+    top:0;
+    z-index:100;
+    background:rgba(10,9,8,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:22px 40px;
+    max-width:1180px;
+    margin:0 auto;
+  }
+  .logo{
+    line-height:1;
+  }
+  .logo .name{
+    font-size:28px;
+    letter-spacing:1px;
+    color:var(--cream);
+    font-weight:600;
+  }
+  .logo .tag{
+    display:block;
+    font-family:'Jost',sans-serif;
+    font-size:10px;
+    letter-spacing:7px;
+    color:var(--gold);
+    margin-top:2px;
+  }
+  nav ul{
+    display:flex;
+    gap:38px;
+  }
+  nav a{
+    font-size:13px;
+    letter-spacing:1.5px;
+    color:var(--gray);
+    text-transform:uppercase;
+    padding-bottom:8px;
+    position:relative;
+    transition:color .25s ease;
+  }
+  nav a:hover{color:var(--cream);}
+  nav a.active{
+    color:var(--gold);
+    border-bottom:1px solid var(--gold);
+  }
+  .btn-gold{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:var(--gold);
+    color:#1a1305;
+    font-size:13px;
+    letter-spacing:1.5px;
+    font-weight:600;
+    text-transform:uppercase;
+    padding:14px 26px;
+    border:none;
+    border-radius:2px;
+    cursor:pointer;
+    transition:background .25s ease, transform .2s ease;
+  }
+  .btn-gold:hover{background:var(--gold-light); transform:translateY(-1px);}
+  .btn-gold svg{width:14px;height:14px;}
+  .btn-outline{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    background:transparent;
+    border:1px solid var(--gold);
+    color:var(--gold);
+    font-size:13px;
+    letter-spacing:1.5px;
+    font-weight:500;
+    text-transform:uppercase;
+    padding:15px 28px;
+    cursor:pointer;
+    transition:all .25s ease;
+  }
+  .btn-outline:hover{background:var(--gold); color:#1a1305;}
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  /* ===== HERO ===== */
+  .hero{
+    position:relative;
+    min-height:88vh;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+  }
+  .hero-bg{
+    position:absolute;
+    inset:0;
+    background:url('https://images.unsplash.com/photo-1470019693664-1d202d2c0907?q=80&w=1740&auto=format&fit=crop') center 30%/cover no-repeat;
+  }
+  .hero-bg::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, rgba(10,9,8,0.97) 0%, rgba(10,9,8,0.75) 32%, rgba(10,9,8,0.25) 60%, rgba(10,9,8,0.55) 100%),
+               linear-gradient(0deg, rgba(10,9,8,0.9) 0%, rgba(10,9,8,0) 35%);
+  }
+  .hero-content{
+    position:relative;
+    z-index:2;
+    max-width:600px;
+    padding:80px 40px 60px;
+  }
+  .hero-content h1{
+    font-weight:500;
+    font-size:56px;
+    line-height:1.1;
+    color:var(--cream);
+  }
+  .hero-content h1 span{
+    display:block;
+    color:var(--gold-light);
+    font-style:italic;
+  }
+  .hero-content p{
+    margin-top:22px;
+    font-size:16px;
+    line-height:1.8;
+    color:var(--gray);
+    max-width:460px;
+  }
+  .hero-content .btn-gold{
+    margin-top:32px;
+  }
+  .qr-row{
+    margin-top:46px;
+    display:flex;
+    align-items:center;
+    gap:14px;
+    font-size:13px;
+    color:var(--gray);
+  }
+  .qr-row svg{width:18px;height:18px;color:var(--gold);}
+  .qr-box{
+    margin-top:16px;
+    width:92px;
+    height:92px;
+    background:#fff;
+    padding:6px;
+    border-radius:2px;
+  }
+  .qr-box img{width:100%;height:100%;}
+  .scroll-cue{
+    position:absolute;
+    bottom:26px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:2;
+    color:var(--gold);
+    animation:bob 2.2s ease-in-out infinite;
+  }
+  @keyframes bob{
+    0%,100%{transform:translate(-50%,0);}
+    50%{transform:translate(-50%,8px);}
+  }
 
-    <title>RüahEsh Worship | Audiciones</title>
+  /* ===== QUIENES SOMOS ===== */
+  .section{
+    padding:100px 0;
+  }
+  .section-head{
+    text-align:center;
+    margin-bottom:64px;
+  }
+  .section-head h2{
+    margin-top:14px;
+    font-size:34px;
+    font-weight:500;
+    color:var(--cream);
+  }
+  .who-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0;
+  }
+  .who-grid > div{
+    padding:0 40px;
+    text-align:center;
+    border-left:1px solid rgba(255,255,255,0.08);
+  }
+  .who-grid > div:first-child{border-left:none;}
+  .icon-circle{
+    width:52px;height:52px;
+    margin:0 auto 22px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+  }
+  .icon-circle svg{width:22px;height:22px;}
+  .who-grid h3{
+    font-family:'Jost',sans-serif;
+    font-size:15px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--cream);
+    margin-bottom:16px;
+    font-weight:500;
+  }
+  .who-grid p, .who-grid li{
+    font-size:14.5px;
+    line-height:1.9;
+    color:var(--gray);
+  }
+  .who-grid ul{
+    display:inline-block;
+    text-align:left;
+  }
+  .who-grid ul li{
+    position:relative;
+    padding-left:16px;
+    margin-bottom:4px;
+  }
+  .who-grid ul li::before{
+    content:'';
+    position:absolute;
+    left:0; top:10px;
+    width:5px;height:5px;
+    background:var(--gold);
+    border-radius:50%;
+  }
 
-    <meta name="description"
-        content="Únete a RüahEsh Worship. Estamos buscando adoradores con un corazón rendido a Cristo para formar parte de este ministerio.">
+  /* ===== A QUIEN BUSCAMOS ===== */
+  .looking{
+    background:var(--black-2);
+  }
+  .cards{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:28px;
+    margin-top:20px;
+  }
+  .card{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    border:1px solid var(--line);
+    overflow:hidden;
+    background:rgba(255,255,255,0.015);
+  }
+  .card .img{
+    height:100%;
+    min-height:230px;
+    background-size:cover;
+    background-position:center;
+    filter:sepia(.35) contrast(1.05);
+  }
+  .card .img.mic{
+    background-image:url('https://images.unsplash.com/photo-1520523839897-bd0b52f945a0?q=80&w=1200&auto=format&fit=crop');
+  }
+  .card .img.guitar{
+    background-image:url('https://images.unsplash.com/photo-1510915361894-db8b60106cb1?q=80&w=1200&auto=format&fit=crop');
+  }
+  .card .info{
+    padding:32px 30px;
+  }
+  .card .info h3{
+    font-family:'Cormorant Garamond', serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:24px;
+    font-weight:600;
+    margin-bottom:16px;
+  }
+  .card .info ul li{
+    position:relative;
+    padding-left:16px;
+    margin-bottom:8px;
+    font-size:14.5px;
+    line-height:1.6;
+    color:var(--gray);
+  }
+  .card .info ul li::before{
+    content:'';
+    position:absolute;
+    left:0; top:8px;
+    width:5px;height:5px;
+    background:var(--gold);
+    border-radius:50%;
+  }
 
-    <meta name="keywords"
-        content="RüahEsh Worship, Worship, Audiciones, Ministerio, Música Cristiana, Vocalistas, Músicos">
+  /* ===== COMPROMISO + PROCESO ===== */
+  .commit-wrap{
+    display:grid;
+    grid-template-columns:0.85fr 1.4fr;
+    gap:60px;
+    align-items:start;
+  }
+  .commit-wrap .eyebrow{display:block; margin-bottom:14px;}
+  .commit-wrap p{
+    color:var(--gray);
+    font-size:15px;
+    line-height:1.9;
+    margin-bottom:22px;
+  }
+  .commit-wrap .script{
+    font-style:italic;
+    color:var(--gold-light);
+    font-size:22px;
+    line-height:1.6;
+  }
+  .divider-v{
+    display:none;
+  }
+  .process{
+    position:relative;
+  }
+  .process-row{
+    display:flex;
+    justify-content:space-between;
+    position:relative;
+  }
+  .process-row::before{
+    content:'';
+    position:absolute;
+    top:26px;
+    left:26px;
+    right:26px;
+    height:0;
+    border-top:1px dashed var(--line);
+    z-index:0;
+  }
+  .step{
+    position:relative;
+    z-index:1;
+    text-align:center;
+    width:19%;
+  }
+  .step .circle{
+    width:54px;height:54px;
+    border:1px solid var(--gold);
+    border-radius:50%;
+    background:var(--black);
+    margin:0 auto 16px;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+    position:relative;
+  }
+  .step .circle svg{width:20px;height:20px;}
+  .step .num{
+    position:absolute;
+    top:-8px; right:-2px;
+    background:var(--gold);
+    color:#1a1305;
+    font-size:10px;
+    width:16px;height:16px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-weight:600;
+  }
+  .step h4{
+    font-family:'Jost',sans-serif;
+    font-size:12.5px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    color:var(--cream);
+    margin-bottom:8px;
+    font-weight:500;
+  }
+  .step p{
+    font-size:12.5px;
+    color:var(--gray);
+    line-height:1.6;
+  }
 
-    <meta property="og:title" content="RüahEsh Worship">
-    <meta property="og:description"
-        content="Exaltamos a Dios. Transformamos atmósferas. Llevamos Su Presencia.">
+  /* ===== CTA BANNER ===== */
+  .cta-banner{
+    position:relative;
+    margin:0 40px;
+    max-width:1100px;
+    margin-left:auto;margin-right:auto;
+    border:1px solid var(--line);
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:44px 50px;
+    gap:30px;
+    flex-wrap:wrap;
+  }
+  .cta-banner::before{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:url('https://images.unsplash.com/photo-1508973379184-7517410fb0bc?q=80&w=1600&auto=format&fit=crop') center/cover;
+    opacity:0.22;
+    z-index:0;
+  }
+  .cta-banner::after{
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg, rgba(10,9,8,0.9), rgba(10,9,8,0.75));
+    z-index:0;
+  }
+  .cta-banner > *{position:relative; z-index:1;}
+  .cta-banner h3{
+    font-size:24px;
+    font-weight:500;
+    color:var(--cream);
+    max-width:520px;
+    line-height:1.4;
+  }
+  .cta-banner .sub{
+    color:var(--gray);
+    font-size:14px;
+    margin-top:8px;
+  }
 
-    <meta property="og:image" content="images/social-preview.jpg">
+  /* ===== FOOTER ===== */
+  footer{
+    padding:70px 0 30px;
+    border-top:1px solid rgba(255,255,255,0.06);
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr;
+    gap:40px;
+    padding-bottom:40px;
+  }
+  .footer-grid .logo .name{font-size:24px;}
+  .footer-grid p{
+    margin-top:16px;
+    color:var(--gray);
+    font-size:13.5px;
+    line-height:1.9;
+  }
+  .footer-grid h4{
+    font-family:'Jost',sans-serif;
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    color:var(--gold);
+    margin-bottom:20px;
+    font-weight:500;
+  }
+  .contact-list li{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:var(--gray);
+    font-size:14px;
+    margin-bottom:14px;
+  }
+  .contact-list svg{width:15px;height:15px;color:var(--gold); flex-shrink:0;}
+  .socials{
+    display:flex;
+    gap:14px;
+  }
+  .socials a{
+    width:38px;height:38px;
+    border:1px solid var(--line);
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    color:var(--gold);
+    transition:all .25s ease;
+  }
+  .socials a:hover{background:var(--gold); color:#1a1305;}
+  .socials svg{width:16px;height:16px;}
+  .copyright{
+    text-align:center;
+    padding-top:30px;
+    border-top:1px solid rgba(255,255,255,0.06);
+    font-size:12.5px;
+    color:var(--gray);
+    letter-spacing:0.5px;
+  }
 
-    <meta property="og:type" content="website">
-
-    <link rel="icon" href="images/favicon.png">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="css/style.css">
-
+  /* ===== RESPONSIVE ===== */
+  @media (max-width: 900px){
+    .header-inner{padding:18px 20px;}
+    nav{display:none;}
+    .container{padding:0 20px;}
+    .hero-content{padding:60px 20px 50px;}
+    .hero-content h1{font-size:38px;}
+    .who-grid{grid-template-columns:1fr; gap:40px;}
+    .who-grid > div{border-left:none; border-top:1px solid rgba(255,255,255,0.08); padding-top:36px;}
+    .who-grid > div:first-child{border-top:none;padding-top:0;}
+    .cards{grid-template-columns:1fr;}
+    .card{grid-template-columns:1fr;}
+    .card .img{min-height:180px;}
+    .commit-wrap{grid-template-columns:1fr;}
+    .process-row{flex-wrap:wrap; gap:24px;}
+    .process-row::before{display:none;}
+    .step{width:45%;}
+    .footer-grid{grid-template-columns:1fr; gap:32px;}
+    .cta-banner{flex-direction:column; text-align:center; justify-content:center;}
+  }
+</style>
 </head>
-
 <body>
 
-    <!-- ===================================== -->
-    <!-- NAVBAR -->
-    <!-- ===================================== -->
+<header>
+  <div class="header-inner">
+    <div class="logo">
+      <div class="name">RüahEsh</div>
+      <span class="tag">WORSHIP</span>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#quienes-somos">Quiénes somos</a></li>
+        <li><a href="#audiciones">Audiciones</a></li>
+        <li><a href="#preguntas">Preguntas</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <button class="btn-gold" onclick="scrollToId('aplicar')">
+      Aplica ahora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</header>
 
-    <header class="header">
+<section class="hero" id="inicio">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <h1>Donde los corazones<span>se convierten en adoración</span></h1>
+    <p>RüahEsh Worship es un grupo de alabanza que se está formando con el propósito de exaltar a Dios y llevar Su presencia a cada lugar a través de la música y la adoración.</p>
+    <button class="btn-gold" onclick="scrollToId('aplicar')">
+      Aplica ahora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </button>
 
-        <div class="container">
+    <div class="qr-row">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/><path d="M14 14h3v3h-3zM20 14v3M14 20h3M20 20v.01"/></svg>
+      Escanea el código QR para aplicar
+    </div>
+    <div class="qr-box">
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://ruaheshworship.com" alt="QR code">
+    </div>
+  </div>
+  <div class="scroll-cue">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 9l6 6 6-6"/></svg>
+  </div>
+</section>
 
-            <a href="#hero" class="logo">
-
-                <img src="images/logo-white.png" alt="RüahEsh Worship Logo">
-
-            </a>
-
-            <nav class="navbar">
-
-                <ul>
-
-                    <li><a href="#about">Quiénes Somos</a></li>
-
-                    <li><a href="#vision">Visión</a></li>
-
-                    <li><a href="#calling">Convocatoria</a></li>
-
-                    <li><a href="#process">Audición</a></li>
-
-                    <li><a href="#faq">Preguntas</a></li>
-
-                </ul>
-
-            </nav>
-
-            <a href="https://forms.gle/XXXXXXXXXXXX"
-                target="_blank"
-                class="nav-button">
-
-                Aplica Ahora
-
-            </a>
-
-            <button class="menu-toggle" id="menuToggle">
-
-                <span></span>
-                <span></span>
-                <span></span>
-
-            </button>
-
+<section class="section" id="quienes-somos">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">Quiénes somos</span>
+    </div>
+    <div class="who-grid">
+      <div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
         </div>
+        <h3>Visión</h3>
+        <p>Ver vidas transformadas a través de una adoración verdadera que refleja el corazón de Dios.</p>
+      </div>
+      <div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z"/></svg>
+        </div>
+        <h3>Misión</h3>
+        <p>Exaltar a Dios con excelencia y autenticidad, creando atmósferas donde Su presencia se manifiesta.</p>
+      </div>
+      <div>
+        <div class="icon-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M7 7h10"/></svg>
+        </div>
+        <h3>Valores</h3>
+        <ul>
+          <li>Intimidad con Dios</li>
+          <li>Excelencia</li>
+          <li>Unidad</li>
+          <li>Integridad</li>
+          <li>Pasión por Su presencia</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </header>
+<section class="section looking" id="audiciones">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">A quién buscamos</span>
+      <p style="margin-top:16px;color:var(--gray);font-size:15px;">Por ahora estamos buscando personas con pasión por Dios y por la adoración en las siguientes áreas:</p>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <div class="img mic"></div>
+        <div class="info">
+          <h3>Vocalistas</h3>
+          <ul>
+            <li>Voces que aman al Señor</li>
+            <li>Corazones dispuestos a adorar con honestidad</li>
+            <li>Disponibilidad para ensayos y reuniones</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img guitar"></div>
+        <div class="info">
+          <h3>Músicos</h3>
+          <ul>
+            <li>Instrumentistas con pasión por la adoración</li>
+            <li>Compromiso y excelencia en su instrumento</li>
+            <li>Disponibilidad para ensayos y reuniones</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- ===================================== -->
-    <!-- HERO -->
-    <!-- ===================================== -->
-
-    <section class="hero" id="hero">
-
-        <div class="hero-overlay"></div>
-
-        <img
-            src="images/hero.jpg"
-            alt="RüahEsh Worship"
-            class="hero-image">
-
-        <div class="hero-content">
-
-            <img
-                src="images/logo-white.png"
-                alt="Logo"
-                class="hero-logo">
-
-            <h1>
-
-                Exaltamos a Dios<br>
-                Transformamos atmósferas<br>
-                Llevamos Su Presencia
-
-            </h1>
-
-            <p>
-
-                Estamos buscando adoradores apasionados que deseen servir con excelencia,
-                humildad y un corazón completamente rendido a Cristo.
-
-            </p>
-
-            <div class="hero-buttons">
-
-                <a href="#calling" class="btn-primary">
-
-                    Aplica Ahora
-
-                </a>
-
-                <a href="#about" class="btn-secondary">
-
-                    Conócenos
-
-                </a>
-
+<section class="section" id="preguntas">
+  <div class="container">
+    <div class="commit-wrap">
+      <div>
+        <span class="eyebrow">Nuestro compromiso</span>
+        <p>Este grupo es para exaltar a Dios, no para buscar fama. Estamos formando un equipo que camina junto, se construye en amor y sirve con humildad.</p>
+        <p class="script">Aquí no venimos a ser vistos, aquí venimos a adorarlo.</p>
+      </div>
+      <div class="process">
+        <span class="eyebrow" style="display:block;text-align:center;margin-bottom:36px;">Proceso de audición</span>
+        <div class="process-row">
+          <div class="step">
+            <div class="circle">
+              <span class="num">1</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 4h6a1 1 0 0 1 1 1v1H8V5a1 1 0 0 1 1-1z"/><rect x="6" y="4" width="12" height="17" rx="1"/><path d="M9 12h6M9 16h4"/></svg>
             </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- QUIÉNES SOMOS -->
-    <!-- ===================================== -->
-
-    <section class="about section" id="about">
-
-        <div class="container">
-
-            <h2>Quiénes Somos</h2>
-
-            <p>
-
-                RüahEsh Worship es un ministerio de adoración comprometido con exaltar el
-                nombre de Jesucristo a través de una vida de rendición, excelencia y servicio.
-                Creemos que la verdadera adoración trasciende la música y comienza con un
-                corazón completamente entregado al Señor.
-
-            </p>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- VISIÓN MISIÓN VALORES -->
-    <!-- ===================================== -->
-
-    <section class="vision section" id="vision">
-
-        <div class="container grid-three">
-
-            <article class="card">
-
-                <div class="card-icon">
-
-                    <img src="icons/target.svg" alt="Visión">
-
-                </div>
-
-                <h3>Visión</h3>
-
-                <p>
-
-                    Formar una comunidad de adoradores que reflejen el carácter de Cristo y
-                    lleven Su presencia dondequiera que ministren.
-
-                </p>
-
-            </article>
-
-            <article class="card">
-
-                <div class="card-icon">
-
-                    <img src="icons/flame.svg" alt="Misión">
-
-                </div>
-
-                <h3>Misión</h3>
-
-                <p>
-
-                    Exaltar a Dios mediante una adoración bíblica, íntegra y llena del Espíritu
-                    Santo que transforme vidas.
-
-                </p>
-
-            </article>
-
-            <article class="card">
-
-                <div class="card-icon">
-
-                    <img src="icons/heart.svg" alt="Valores">
-
-                </div>
-
-                <h3>Valores</h3>
-
-                <p>
-
-                    Humildad, excelencia, integridad, unidad, discipulado y una búsqueda
-                    constante de la presencia de Dios.
-
-                </p>
-
-            </article>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- A QUIÉN BUSCAMOS -->
-    <!-- ===================================== -->
-
-    <section class="calling section">
-
-        <div class="container">
-
-            <h2>A Quién Buscamos</h2>
-
-            <div class="grid-two">
-
-                <article class="card">
-
-                    <img src="icons/microphone.svg" alt="Vocalistas">
-
-                    <h3>Vocalistas</h3>
-
-                    <p>
-
-                        Personas con llamado al ministerio, afinación, deseo de crecer y un
-                        corazón dispuesto a servir.
-
-                    </p>
-
-                </article>
-
-                <article class="card">
-
-                    <img src="icons/music.svg" alt="Músicos">
-
-                    <h3>Músicos</h3>
-
-                    <p>
-
-                        Pianistas, guitarristas, bajistas, bateristas y otros instrumentistas
-                        comprometidos con la excelencia y la adoración.
-
-                    </p>
-
-                </article>
-
+            <h4>Aplicación</h4>
+            <p>Llena el formulario de aplicación.</p>
+          </div>
+          <div class="step">
+            <div class="circle">
+              <span class="num">2</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3a9 9 0 1 0 9 9"/><path d="M12 3v9l6 3"/></svg>
             </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- CONVOCATORIA -->
-    <!-- ===================================== -->
-
-    <section class="section dark-section" id="calling">
-
-        <div class="container">
-
-            <h2>Convocatoria</h2>
-
-            <p>
-
-                Antes de aplicar, te invitamos a leer cuidadosamente toda la información
-                relacionada con el ministerio y el proceso de audición.
-
-            </p>
-
-            <div class="button-group">
-
-                <a href="documents/Convocatoria.pdf"
-                    target="_blank"
-                    class="btn-primary">
-
-                    Ver PDF
-
-                </a>
-
-                <a href="documents/Convocatoria.pdf"
-                    download
-                    class="btn-secondary">
-
-                    Descargar PDF
-
-                </a>
-
-                <a href="https://forms.gle/XXXXXXXXXXXX"
-                    target="_blank"
-                    class="btn-primary">
-
-                    Aplicar Ahora
-
-                </a>
-
+            <h4>Evaluación</h4>
+            <p>Revisamos tu información y te contactamos.</p>
+          </div>
+          <div class="step">
+            <div class="circle">
+              <span class="num">3</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 18V5l10-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="16" cy="16" r="3"/></svg>
             </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- PROCESO -->
-    <!-- ===================================== -->
-
-    <section class="section" id="process">
-
-        <div class="container">
-
-            <h2>Proceso de Audición</h2>
-
-            <div class="timeline">
-
-                <div class="timeline-item">
-
-                    <h3>1</h3>
-
-                    <p>
-
-                        Completa la solicitud.
-
-                    </p>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <h3>2</h3>
-
-                    <p>
-
-                        Evaluaremos tu información.
-
-                    </p>
-
-                </div>
-
-                <div class="timeline-item">
-
-                    <h3>3</h3>
-
-                    <p>
-
-                        Si eres seleccionado serás contactado para la audición presencial.
-
-                    </p>
-
-                </div>
-
+            <h4>Audición</h4>
+            <p>Te invitaremos a una audición presencial.</p>
+          </div>
+          <div class="step">
+            <div class="circle">
+              <span class="num">4</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3"/><path d="M2 20c0-3.5 3-6 7-6s7 2.5 7 6"/><circle cx="17" cy="9" r="2.5"/><path d="M17 13.2c2.5.3 4 2.2 4 4.8"/></svg>
             </div>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- LLAMADO FINAL -->
-    <!-- ===================================== -->
-
-    <section class="final-call section">
-
-        <div class="container">
-
-            <h2>
-
-                ¿Sientes que Dios te está llamando a formar parte de este ministerio?
-
-            </h2>
-
-            <p>
-
-                Nos encantaría conocerte y caminar juntos mientras buscamos glorificar a
-                Cristo con nuestras vidas y nuestros dones.
-
-            </p>
-
-            <a
-                href="https://forms.gle/XXXXXXXXXXXX"
-                target="_blank"
-                class="btn-primary">
-
-                Aplica Ahora
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <!-- ===================================== -->
-    <!-- FAQ -->
-    <!-- ===================================== -->
-
-    <section class="section" id="faq">
-
-        <div class="container">
-
-            <h2>Preguntas Frecuentes</h2>
-
-            <div class="faq">
-
-                <details>
-
-                    <summary>¿Necesito experiencia?</summary>
-
-                    <p>
-
-                        Sí. Buscamos personas con un nivel musical que les permita servir con
-                        excelencia y seguir creciendo dentro del ministerio.
-
-                    </p>
-
-                </details>
-
-                <details>
-
-                    <summary>¿Debo pertenecer a una iglesia?</summary>
-
-                    <p>
-
-                        Sí. Valoramos profundamente que cada integrante permanezca
-                        conectado y sometido a una iglesia local.
-
-                    </p>
-
-                </details>
-
-                <details>
-
-                    <summary>¿Puedo aplicar desde otro estado?</summary>
-
-                    <p>
-
-                        Sí, aunque la disponibilidad para reuniones y actividades será un
-                        factor importante durante el proceso.
-
-                    </p>
-
-                </details>
-
+            <h4>Entrevista</h4>
+            <p>Conversación para conocerte mejor.</p>
+          </div>
+          <div class="step">
+            <div class="circle">
+              <span class="num">5</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 13l4 4L19 7"/></svg>
             </div>
-
+            <h4>Decisión</h4>
+            <p>Te informaremos si fuiste seleccionado.</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    </section>
+<section id="aplicar" style="padding:0 0 100px;">
+  <div class="cta-banner">
+    <div>
+      <h3>¿Sientes que Dios te está llamando a ser parte de este equipo?</h3>
+      <div class="sub">Nos encantaría conocerte.</div>
+    </div>
+    <button class="btn-gold">
+      Aplica ahora
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+    </button>
+  </div>
+</section>
 
-    <!-- ===================================== -->
-    <!-- FOOTER -->
-    <!-- ===================================== -->
-
-    <footer>
-
-        <div class="container footer-grid">
-
-            <div>
-
-                <img
-                    src="images/logo-white.png"
-                    class="footer-logo"
-                    alt="Logo">
-
-                <p>
-
-                    Exaltamos a Dios<br>
-                    Transformamos atmósferas<br>
-                    Llevamos Su Presencia
-
-                </p>
-
-            </div>
-
-            <div>
-
-                <h4>Contáctanos</h4>
-
-                <a href="mailto:ruaheshworship@gmail.com">
-
-                    ruaheshworship@gmail.com
-
-                </a>
-
-                <a href="https://www.instagram.com/ruaheshworship">
-
-                    Instagram
-
-                </a>
-
-                <a href="https://www.ruaheshworship.com">
-
-                    Website
-
-                </a>
-
-            </div>
-
-            <div>
-
-                <h4>Síguenos</h4>
-
-                <a href="https://www.instagram.com/ruaheshworship">
-
-                    Instagram
-
-                </a>
-
-                <a href="https://youtube.com/@ruaheshworship">
-
-                    YouTube
-
-                </a>
-
-            </div>
-
+<footer id="contacto">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="logo">
+          <div class="name">RüahEsh</div>
+          <span class="tag">WORSHIP</span>
         </div>
-
-        <div class="copyright">
-
-            © 2026 RüahEsh Worship. Todos los derechos reservados.
-
+        <p>Exaltamos a Dios.<br>Transformamos atmósferas.<br>Llevamos Su presencia.</p>
+      </div>
+      <div>
+        <h4>Contáctanos</h4>
+        <ul class="contact-list">
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/></svg>
+            ruaheshworship@gmail.com
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+            @ruaheshworship
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20z"/></svg>
+            ruaheshworship.com
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <div class="socials">
+          <a href="#" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg>
+          </a>
+          <a href="#" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="5" width="20" height="14" rx="4"/><path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"/></svg>
+          </a>
+          <a href="#" aria-label="Spotify">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="10"/><path d="M7 10c4-1 8-.5 10.5 1M7.5 13.5c3-.8 6.5-.4 9 1M8 17c2.5-.6 5-.3 7 .8"/></svg>
+          </a>
         </div>
+      </div>
+    </div>
+    <div class="copyright">© 2026 RüahEsh Worship. Todos los derechos reservados.</div>
+  </div>
+</footer>
 
-    </footer>
+<script>
+  function scrollToId(id){
+    const el = document.getElementById(id);
+    if(el){ el.scrollIntoView({behavior:'smooth'}); }
+  }
 
-    <script src="js/script.js"></script>
+  // Nav active state on scroll
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(sec => {
+      const rect = sec.getBoundingClientRect();
+      if(rect.top <= 120 && rect.bottom >= 120){
+        current = sec.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
 
 </body>
-
 </html>
