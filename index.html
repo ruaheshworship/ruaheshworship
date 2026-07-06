@@ -1010,6 +1010,12 @@ document.querySelectorAll('#mainNav a').forEach(link => {
     navLinks.forEach(link => {
       link.classList.toggle('active', link.getAttribute('href') === '#' + current);
     });
+    function toggleFaq(button){
+    const item = button.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(el => el.classList.remove('open'));
+    if(!wasOpen){ item.classList.add('open'); }
+}
   });
 </script>
 
