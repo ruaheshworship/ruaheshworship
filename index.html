@@ -841,7 +841,15 @@ nav ul{
     const el = document.getElementById(id);
     if(el){ el.scrollIntoView({behavior:'smooth'}); }
   }
+function toggleMenu(){
+    document.getElementById('mainNav').classList.toggle('open');
+}
 
+document.querySelectorAll('#mainNav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.getElementById('mainNav').classList.remove('open');
+    });
+});
   // Nav active state on scroll
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('nav a');
