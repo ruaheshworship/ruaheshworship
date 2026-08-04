@@ -69,10 +69,10 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
-    padding:12px 40px;
+    padding:8px 40px;
     max-width:1180px;
     margin:0 auto;
-    max-height: 90px;
+    max-height: 110px;
     overflow: hidden;
 }
   .logo{
@@ -676,6 +676,13 @@
   /* ===== RESPONSIVE ===== */
   @media (max-width: 900px){
     .header-inner{padding:18px 20px;}
+    .header-logo img{
+    height: 55px;
+    margin-left: -12px;
+}
+.header-inner{
+    max-height: none;
+}
     .menu-toggle{display:flex;}
     .section{ padding: 60px 0; }
     .hero{ min-height: auto; padding-bottom: 60px; }
